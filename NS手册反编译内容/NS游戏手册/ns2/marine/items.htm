@@ -77,9 +77,10 @@
   <tr>
     <td><span class=tt>弹匣大小: </span>50 bullets</td>
     <td><span class=tt>最大后备弹储量: </span>250 bullets</td>
+    <td><span class=tt>重新装填速度: </span>2.25秒</td>
   </tr>
   <tr>
-    <td><span class=tt>价格: </span>3</td>
+    <td><span class=tt>价格: </span>3res</td>
     <td><span class=tt>需求: </span>军械库</td>
   </tr>
   <tr>
@@ -91,19 +92,21 @@
     <td colspan=2><span class=tt>霰弹枪</span> (Shotgun)</td>
   </tr>
   <tr>
-    <td width=220><span class=tt>攻击力: </span>17x10 hp/shots</td>
-    <td width=220><span class=tt>射击间隔: </span>1.30 sec/shot</td>
+    <td width=220><span class=tt>攻击力: </span>17x10（11/12/13）hp/shots</td>
+    <td width=220><span class=tt>射击间隔: </span>0.72 秒</td>
+    <td width=220><span class=tt>伤害类型: </span>正常</td>
   </tr>
   <tr>
-    <td><span class=tt>弹匣大小: </span>8 shots</td>
-    <td><span class=tt>最大后备弹储量: </span>40 shots</td>
+    <td><span class=tt>弹匣大小: </span>6发</td>
+    <td><span class=tt>最大后备弹储量: </span>30发</td>
+    <td><span class=tt>重新装填速度: </span>2.35 - 5.5秒</td>
   </tr>
   <tr>
-    <td><span class=tt>价格: </span>10 res</td>
-    <td><span class=tt>需求: </span>Armory</td>
+    <td><span class=tt>价格: </span>20res</td>
+    <td><span class=tt>需求: </span>军械库研发</td>
   </tr>
   <tr>
-    <td colspan=2>近战一流的武器，每次射击含10块碎片，有射程限制</td>
+    <td colspan=2>此武器在近距离时极具杀伤力，升级后可2到3枪全中下杀死高级异形生命体。由于弹仓有限和散布性质，陆战队员应尝试极近距离下全中目标。</td>
   </tr>
   <tr><td colspan=3 style="background-color: 000000">　</td></tr>
   <tr>
@@ -111,24 +114,55 @@
     <td colspan=2><span class=tt>重机枪</span> (HMG, Heavy Machine Gun)</td>
   </tr>
   <tr>
-    <td width=220><span class=tt>攻击力: </span>20 hp/shot</td>
-    <td width=220><span class=tt>射击频率: </span>10.00 shots/sec</td>
+    <td width=220><span class=tt>攻击力: </span>对建筑：8 （8.8 / 9.6 / 11.4）对异形单位：12 （13/14/15） hp/shot</td>
+    <td width=220><span class=tt>射击频率: </span>每0.055秒1发</td>
+    <td width=220><span class=tt>伤害类型: </span>重型（对护甲双倍伤害）</td>
   </tr>
   <tr>
-    <td><span class=tt>弹匣大小: </span>125 bullets</td>
-    <td><span class=tt>最大后备弹储量: </span>250 bullets</td>
+    <td><span class=tt>弹匣大小: </span>100发</td>
+    <td><span class=tt>最大后备弹储量: </span>500发</td>
+    <td><span class=tt>重新装填速度: </span>3.5秒</td>
+  </tr>
+  <tr>
+    <td><span class=tt>价格: </span>20 res</td>
+    <td><span class=tt>需求: </span>高级军械库Advanced Armory</td>
+  </tr>
+  <tr>
+    <td colspan=2>重机枪是给队友提供火力掩护的武器。尝试思考像固定重机枪一样去使用它。
+不要在没看到目标时射击。
+不要在75/100时换弹，只在弹药少于40发（+手枪10发）时换弹，25发子弹足以杀死一个skulk甚至两个。
+不要首先冲上前线，然后死去。
+不要射击建筑物，那样不会造成太大伤害，容易导致您在第一次装弹时处于被动状态，
+最好的用法是留在队友的后面，您的任务是掩护队友，霰弹枪更适合冲上前线。
+尝试配合镭射机甲一起行动，因为对护甲伤害双倍，请尽全力输出onos。
+与上述相同，换弹次数越多，掩护队友的能力就越弱。
+</td>
+  </tr>
+  <tr><td colspan=3 style="background-color: 000000">　</td></tr>
+  <tr>
+    <td align=center rowspan=5 style="background-color: 000000"><img src=img/items/gl.gif></td>
+    <td colspan=2><span class=tt>榴弹发射器</span> (GL, Grenade Launcher)</td>
+  </tr>
+  <tr>
+    <td width=220><span class=tt>攻击力: </span>125 hp/shot</td>
+    <td width=220><span class=tt>射击间隔: </span>1.20 sec/shot</td>
+  </tr>
+  <tr>
+    <td><span class=tt>弹匣大小: </span>4 shots</td>
+    <td><span class=tt>最大后备弹储量: </span>30 shots</td>
   </tr>
   <tr>
     <td><span class=tt>价格: </span>15 res</td>
     <td><span class=tt>需求: </span>Advanced Armory</td>
   </tr>
   <tr>
-    <td colspan=2>轻机枪两倍多的弹匣大小，减少换弹的次数，但换一次弹挺久的</td>
+    <td colspan=2>对建筑两倍伤害，弹匣小，而且换一次弹.......射出后2秒爆炸，杀伤半径350单位。射出后碰撞到敌人也会爆炸</td>
+</td>
   </tr>
   <tr><td colspan=3 style="background-color: 000000">　</td></tr>
   <tr>
-    <td align=center rowspan=5 style="background-color: 000000"><img src=img/items/gl.gif></td>
-    <td colspan=2><span class=tt>榴弹发射器</span> (GL, Grenade Launcher)</td>
+    <td align=center rowspan=5 style="background-color: 000000"><img src=img/items/300px-Flamethrower_side_normal.png></td>
+    <td colspan=2><span class=tt>火焰喷射器</span>Flamethrower</td>
   </tr>
   <tr>
     <td width=220><span class=tt>攻击力: </span>125 hp/shot</td>
@@ -209,16 +243,28 @@
   </tr>
   <tr><td colspan=3 style="background-color: 000000">　</td></tr>
   <tr>
-    <td align=center rowspan=5 style="background-color: 000000"><img src=img/items/hg.gif></td>
-    <td colspan=2><span class=tt>手雷</span> (Hand Grenade)</td>
+    <td align=center rowspan=5 style="background-color: 000000"><img src=img/items/100px-Grenade_Spark.png></td>
+    <td colspan=2><span class=tt>电磁手雷</span> (Hand Grenade)</td>
   </tr>
   <tr>
     <td width=220><span class=tt>攻击力: </span>80 hp</td>
     <td width=220><span class=tt>投出时间: </span>1.00 sec</td>
   </tr>
   <tr>
-    <td><span class=tt>弹匣大小: </span>N/A</td>
-    <td><span class=tt>最大后备弹储量: </span>2 grenades</td>
+    <td><span class=tt>价格: </span>N/A</td>
+    <td><span class=tt>需求: </span>Armory</td>
+  </tr>
+  <tr>
+    <td colspan=2>投出后1.00秒爆炸，投出后碰撞到敌人也会爆炸</td>
+  </tr>
+<tr><td colspan=3 style="background-color: 000000">　</td></tr>
+  <tr>
+    <td align=center rowspan=5 style="background-color: 000000"><img src=img/items/100px-Grenade_Cluster.png></td>
+    <td colspan=2><span class=tt>集束手雷</span> (Hand Grenade)</td>
+  </tr>
+  <tr>
+    <td width=220><span class=tt>攻击力: </span>80 hp</td>
+    <td width=220><span class=tt>投出时间: </span>1.00 sec</td>
   </tr>
   <tr>
     <td><span class=tt>价格: </span>N/A</td>
@@ -228,6 +274,22 @@
     <td colspan=2>投出后1.00秒爆炸，投出后碰撞到敌人也会爆炸</td>
   </tr>
   <tr><td colspan=3 style="background-color: 000000">　</td></tr>
+  <tr>
+    <td align=center rowspan=5 style="background-color: 000000"><img src=img/items/70px-Grenade_Nerve.png></td>
+    <td colspan=2><span class=tt>毒气手雷</span> (Hand Grenade)</td>
+  </tr>
+  <tr>
+    <td width=220><span class=tt>攻击力: </span>80 hp</td>
+    <td width=220><span class=tt>投出时间: </span>1.00 sec</td>
+  </tr>
+  <tr>
+    <td><span class=tt>价格: </span>N/A</td>
+    <td><span class=tt>需求: </span>Armory</td>
+  </tr>
+  <tr>
+    <td colspan=2>投出后1.00秒爆炸，投出后碰撞到敌人也会爆炸</td>
+  </tr>
+<tr><td colspan=3 style="background-color: 000000">　</td></tr>
   <tr>
     <td align=center rowspan=5 style="background-color: 000000"><img src=img/items/mine.gif></td>
     <td colspan=2><span class=tt>地雷</span> (Mine)</td>
@@ -266,11 +328,23 @@
   </tr>
   <tr><td colspan=3 style="background-color: 000000">　</td></tr>
   <tr>
-    <td align=center rowspan=3 style="background-color: 000000"><img src=img/items/heavy.gif></td>
-    <td colspan=2><span class=tt>重型装甲</span> (Heavy Armor)</td>
+    <td align=center rowspan=3 style="background-color: 000000"><img src=img/items/250px-Exosuit_minigun.png></td>
+    <td colspan=2><span class=tt>转轮机甲</span> (Exosuit_minigun)</td>
   </tr>
   <tr>
-    <td><span class=tt>价格: </span>15 res</td>
+    <td><span class=tt>价格: </span>55 res</td>
+    <td><span class=tt>用途: </span>超高防御力</td>
+  </tr>
+  <tr>
+    <td colspan=2>200点护甲，每升一级防御还能再增加30点，外带防毒功能。重甲Marine的移动速度是轻甲的95%</td>
+  </tr>
+<tr><td colspan=3 style="background-color: 000000">　</td></tr>
+  <tr>
+    <td align=center rowspan=3 style="background-color: 000000"><img src=img/items/250px-Exosuit_railgun.png></td>
+    <td colspan=2><span class=tt>镭射机甲</span> (Exosuit_railgun)</td>
+  </tr>
+  <tr>
+    <td><span class=tt>价格: </span>55 res</td>
     <td><span class=tt>用途: </span>超高防御力</td>
   </tr>
   <tr>
