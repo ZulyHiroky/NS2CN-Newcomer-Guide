@@ -1,0 +1,87 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <title>creative hover effect</title>
+     
+     <style>
+     
+         .container{
+             display: flex;
+             width: 100%;
+             padding: 4% 2%;
+             box-sizing: border-box;
+             height: 100vh;
+         }
+         
+     
+         .box{
+             flex: 1;
+             overflow: hidden;
+             transition: 0.5s;
+             margin: 0 2%;
+             box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+             line-height: 0;
+         }
+     
+         .box > img{
+             width: 200%;
+             height: calc(100% - 10vh);
+             object-fit: cover;
+             transition: 0.5s;
+         }
+     
+         .box > span{
+             font-size: 3vh;
+             display: block;
+             text-align: center;
+             height: 10vh;
+             line-height: 2.5;
+             font-family: tahoma;
+             color: #333;
+             text-transform: uppercase;
+         }
+         
+         
+         .box:hover{
+             flex: 1 1 50%;
+         }
+         
+         .box:hover > img{
+             width: 100%;
+             height: 100%;
+         }
+         
+         
+     </style>
+ </head>
+ <body>
+     
+     <div class="container">
+         <div class="box">
+            <a href="http://www.voeusb.com" <img src="http://www.5g-o.com/codedesign/wp-content/uploads/2020/02/h1.jpg"  alt=""></a>
+             <span>css</span>
+         </div>
+         
+         <div class="box">
+             <img src="http://www.5g-o.com/codedesign/wp-content/uploads/2020/02/h2.jpg" href="http://www.voeus.com" alt="">
+             <span>creative</span>
+         </div>
+         
+         
+          <div class="box">
+             <img src="http://www.5g-o.com/codedesign/wp-content/uploads/2020/02/h3.jpg" href="http://www.voeus.com" alt="">
+             <span>hover</span>
+         </div>
+         
+          
+          <div class="box">
+             <img src="http://www.5g-o.com/codedesign/wp-content/uploads/2020/02/girl-1561989_1920.jpg" href="http://www.voeus.com" alt="">
+             <span>hover</span>
+         </div>
+          
+     </div>
+     
+     
+ </body>
+ </html>
