@@ -27,7 +27,7 @@
     
   </tr>
   <tr>
-    <td><span class=tt>耐久: </span>3000 hp 1500ap  e-hp：6000 </td>
+    <td><span class=tt>耐久: </span><br>3000 hp <br>1500ap <br> e-hp：6000 </td>
     <td><span class=tt>用途: </span><br>研究三合一</td>
   </tr>
   <tr>
@@ -47,7 +47,7 @@
     <td><span class=tt>造时: </span>12 sec</td>
   </tr>
   <tr>
-    <td><span class=tt>耐久: </span>2400 hp 1050 ap e-hp：4500</td>
+    <td><span class=tt>耐久: </span><br>2400 hp <br>1050 ap <br>e-hp：4500</td>
     <td><span class=tt>用途: </span><br>自动采集资源</td>
   </tr>
   <tr>
@@ -60,34 +60,64 @@
   <tr><td colspan=3 style="background-color: 000000">　</td></tr>
   <tr>
     <td align=center rowspan=4 style="background-color: 000000"><img src=img/structures/ip.gif></td>
-    <td colspan=2><span class=tt>援军入口</span> (IP, Infantry Portal)</td>
+    <td colspan=2><span class=tt>援军门户</span> (IP, Infantry Portal)</td>
   </tr>
   <tr>
     <td><span class=tt>造价: </span>20 res</td>
     <td><span class=tt>造时: </span>7 sec</td>
   </tr>
   <tr>
-    <td><span class=tt>耐久: </span>1525 hp 500 ap e-hp：2525</td>
-    <td><span class=tt>用途: </span>复活死去的队友</td>
+    <td><span class=tt>耐久: </span><br>1525 hp<br> 500 ap<br> e-hp：2525</td>
+    <td><span class=tt>用途: </span><br>复活队友</td>
   </tr>
   <tr>
-    <td colspan=2>一般被称做“复活点”的东西，每9秒复活一个士兵</td>
+    <td colspan=2>一般被称做“复活点”的东西，每9秒复活一个士兵
+<br>战局开始时自带一个IP，超过8人时开局自带两个
+<br>建造完成的时立即复活一名队员
+<br>阵亡过多时会排队复活
+<br>警报结束时会立即复活正在“打印”的陆战队员
+<br>是将队员A的所有物理信息都刻印在空的原子B上
+<br>而原子B是从军械库中使用的类似3D打印技术创建的。
+<br>然后将阵亡队员A的意识下载到物理信息和A完全相同的身体B中。
+</td>
   </tr>
   <tr><td colspan=3 style="background-color: 000000">　</td></tr>
   <tr>
     <td align=center rowspan=4 style="background-color: 000000"><img src=img/structures/armory.gif></td>
-    <td colspan=2><span class=tt>弹药库</span> (Armory)</td>
+    <td colspan=2><span class=tt>军械库</span> (Armory)</td>
   </tr>
   <tr>
     <td><span class=tt>造价: </span>10 res</td>
-    <td><span class=tt>造时: </span>15 sec</td>
+    <td><span class=tt>造时: </span>12 sec</td>
   </tr>
   <tr>
-    <td><span class=tt>耐久: </span>2400 hp</td>
-    <td><span class=tt>用途: </span>补充弹药、装备</td>
+    <td><span class=tt>耐久: </span><br>1500 hp <br>200 ap<br>e-hp：1900</td>
+    <td><span class=tt>用途: </span><br>补充血量、弹药、装备<br>研发霰弹枪、地雷、手雷<br>升级</td>
   </tr>
   <tr>
-    <td colspan=2>对这这个东西按住“使用”键（默认为“Ｅ”）可以补充子弹和恢复HP。<br>指挥官可以将初级武器投在它旁边。升级为高级弹药库后更支持投放高级武器</td>
+    <td colspan=2>面对军械库展开时每0.8s补充25HP和1个后备弹药，去除Lerk毒咬效果。
+<br>提供焊枪，允许研发霰弹枪、地雷、手雷，升级为高级军械库，解锁雷达和工厂研究
+<br>当做路桩卡住门口来防止Fade、Onos通过
+<br>指挥官可以将初级武器投放在它旁边，掉落在军械库周围的枪不会消失
+</td>
+  </tr>
+  <tr><td colspan=3 style="background-color: 000000">　</td></tr>
+  <tr>
+    <td align=center rowspan=4 style="background-color: 000000"><img src=img/structures/Advanced_armory.gif></td>
+    <td colspan=2><span class=tt>高级军械库</span> (Armory)</td>
+  </tr>
+  <tr>
+    <td><span class=tt>造价: </span>25 res</td>
+    <td><span class=tt>造时: </span>90 sec</td>
+  </tr>
+  <tr>
+    <td><span class=tt>耐久: </span><br>3000 hp <br>500 ap<br>e-hp：4000</td>
+    <td><span class=tt>用途: </span><br>提供高级军械</td>
+  </tr>
+  <tr>
+    <td colspan=2>简称“高军”，解锁火焰喷射器、榴弹发射器和重机枪。
+<br>解锁原型装备实验室，允许研究机甲和飞行背包
+<br>指挥官可以将高级武器投放在它旁边</td>
   </tr>
   <tr><td colspan=3 style="background-color: 000000">　</td></tr>
   <tr>
@@ -95,15 +125,23 @@
     <td colspan=2><span class=tt>探测器</span> (OB, Observatory)</td>
   </tr>
   <tr>
-    <td><span class=tt>造价: </span>15 res</td>
+    <td><span class=tt>造价: </span>10 res</td>
     <td><span class=tt>造时: </span>15 sec</td>
   </tr>
   <tr>
-    <td><span class=tt>耐久: </span>1700 hp</td>
-    <td><span class=tt>用途: </span>显示附近敌人的位置，反隐形</td>
+    <td><span class=tt>耐久: </span><br>700 hp<br>500 ap<br>e-hp：1700</td>
+    <td><span class=tt>用途: </span>显示范围内的敌人</td>
   </tr>
   <tr>
-    <td colspan=2>一般被称做“雷达”的东西，也算是半个研究用建筑了<br>可以使用Scanner Sweeps能力，对指定位置进行探测</td>
+    <td colspan=2>一般被称做“雷达”的东西，也算是半个研究用建筑了
+<br>可以使用Scanner Sweeps能力简称“Scan”
+<br>呼叫指挥对指定位置进行半径20，持续10s的 扫描
+<br>提供传送门研究，显示半径22范围内的敌人、反隐形，
+<br>突出显示敌人在陆战队员HUD上的位置
+<br>并为ARC提供目标，使Fade的闪烁带有蓝色轨迹
+<br>允许指挥使用紧急召回，需要区域内有指挥站
+<br>3秒后召回到目标指挥站周围，无法取消
+</td>
   </tr>
   <tr><td colspan=3 style="background-color: 000000">　</td></tr>
   <tr>
@@ -115,11 +153,16 @@
     <td><span class=tt>造时: </span>12 sec</td>
   </tr>
   <tr>
-    <td><span class=tt>耐久: </span>3000 hp</td>
-    <td><span class=tt>用途: </span>多个PG间传送</td>
+    <td><span class=tt>耐久: </span><br>1500 hp<br>800 ap<br>e-hp：3100</td>
+    <td><span class=tt>用途: </span><br>瞬间传送</td>
   </tr>
   <tr>
-    <td colspan=2>士兵可以在多个PG间瞬间转移</td>
+    <td colspan=2>陆战队员可以在多个传送门间瞬间转移
+<br>传送门只能按行进方向传送，无法逆向传送
+<br>指挥官可以根据反转行进方向或回收传送门
+<br>保护好传送门，来加固区域，控制战线
+<br>通常修建在关键地点，不过也能在异形领域后方修建，达到奇袭的目的
+</td>
   </tr>
 </table>
 <br></td></tr>
@@ -129,87 +172,155 @@
 <table width=600>
   <tr>
     <td align=center rowspan=4 width=160 style="background-color: 000000"><img src=img/structures/armslab.gif></td>
-    <td colspan=2><span class=tt>武器研究所</span> (Arms Lab)</td>
+    <td colspan=2><span class=tt>武器实验室</span> (Arms Lab)</td>
   </tr>
   <tr>
-    <td width=220><span class=tt>造价: </span>20 res</td>
-    <td width=220><span class=tt>造时: </span>19 sec</td>
+    <td width=220><span class=tt>造价: </span>15 res</td>
+    <td width=220><span class=tt>造时: </span>20 sec</td>
   </tr>
   <tr>
-    <td><span class=tt>耐久: </span>2200 hp</td>
-    <td><span class=tt>用途: </span>提高整体战斗力的相关研究</td>
+    <td><span class=tt>耐久: </span><br>1650 hp<br>500 ap<br>e-hp：2650</td>
+    <td><span class=tt>用途: </span><br>提高整体战斗力的相关研究</td>
   </tr>
   <tr>
-    <td colspan=2>升级攻防等级和研究催化剂</td>
+    <td colspan=2>通常称作“军备”用来提升攻防等级
+<br>每一级武器升级提高10%伤害
+<br>消耗资源 耗时（20res 60s>>30res 90s>>40res 120s）
+<br>每一级护甲升级提高20点护甲AP，机甲加30点护甲
+<br>消耗资源 耗时（20res 60s>>30res 90s>>40res 120s）
+<br>护甲1级和2级能让陆战队员承受多一次伤害，护甲3能多抗Onos一下
+</td>
   </tr>
   <tr><td colspan=3 style="background-color: 000000">　</td></tr>
   <tr>
     <td align=center rowspan=4 style="background-color: 000000"><img src=img/structures/protolab.gif></td>
-    <td colspan=2><span class=tt>防具研究所</span> (Prototype Lab)</td>
+    <td colspan=2><span class=tt>原型装备实验室</span> (Prototype Lab)</td>
   </tr>
   <tr>
     <td><span class=tt>造价: </span>40 res</td>
     <td><span class=tt>造时: </span>20 sec</td>
   </tr>
   <tr>
-    <td><span class=tt>耐久: </span>4000 hp</td>
-    <td><span class=tt>用途: </span>提高个体战斗力的相关研究</td>
+    <td><span class=tt>耐久: </span><br>3000 hp<br>500 ap<br>e-hp：4000</td>
+    <td><span class=tt>用途: </span><br>提供相关装备研究</td>
   </tr>
   <tr>
-    <td colspan=2>研究喷射器和重甲的建筑</td>
+    <td colspan=2>简称“高科”，允许研究飞行背包和机甲
+<br>购买飞行背包时会修复满护甲
+<br>允许指挥在周围投放飞行背包
+</td>
   </tr>
 </table>
 <br></td></tr>
-<tr><td style="background: 000000"><span class=m1><br><br><br></span><a name="DS"></a><span class=m1>防御性建筑　Defensive Structures</span></td></tr>
+<tr><td style="background: 000000"><span class=m1>
+<br>
+<br>
+<br></span><a name="DS"></a><span class=m1>防御性建筑　Defensive Structures</span>
+</td>
+</tr>
 <tr><td>　　防御工事相关建筑</td></tr>
 <tr><td align=center style="background-color: 000000"><br>
 <table width=600>
   <tr>
-    <td align=center rowspan=4 width=160 style="background-color: 000000"><img src=img/structures/tf.gif></td>
-    <td colspan=2><span class=tt>炮塔工厂</span> (TF, Turret Factory)</td>
+    <td align=center rowspan=4 width=160 style="background-color: 000000"><img src=img/structures/armslab.gif></td>
+    <td colspan=2><span class=tt>机械工厂</span> (RF, Robotics Factory)</td>
   </tr>
   <tr>
     <td width=220><span class=tt>造价: </span>10 res</td>
-    <td width=220><span class=tt>造时: </span>13 sec</td>
+    <td width=220><span class=tt>造时: </span>8 sec</td>
   </tr>
   <tr>
-    <td><span class=tt>耐久: </span>3000 hp</td>
+    <td><span class=tt>耐久: </span><br>2500/2800 hp<br>400/600 ap<br>e-hp：3300/4000</td>
+    <td><span class=tt>用途: </span>生产MAC和ARC</td>
+  </tr>
+  <tr>
+    <td colspan=2>简称“工厂”，解锁机枪哨塔，可升级为ARC工厂
+<br>允许生产维修建造机器人MAC
+<br>升级为ARC工厂后允许生产攻城坦克ARC
+<br>建造时有出口要求，被阻挡时无法建造
+<br>第二大的建筑，可以用做挡住加固电源，阻挡Onos攻击
+</td>
+  </tr>
+<tr><td align=center style="background-color: 000000"><br>
+<table width=600>
+  <tr>
+    <td align=center rowspan=4 width=160 style="background-color: 000000"><img src=img/structures/armslab.gif></td>
+    <td colspan=2><span class=tt>哨戒电池</span> (Sentry Battery)</td>
+  </tr>
+  <tr>
+    <td width=220><span class=tt>造价: </span>5 res</td>
+    <td width=220><span class=tt>造时: </span>5 sec</td>
+  </tr>
+  <tr>
+    <td><span class=tt>耐久: </span><br>300 hp<br>350 ap<br>e-hp：1000</td>
     <td><span class=tt>用途: </span>给炮塔提供电力</td>
   </tr>
   <tr>
-    <td colspan=2>俗称“电厂”的建筑，为周围的机枪塔提供电力，TF没了周围的塔也就废了，升级为高级TF后还能为攻城炮提供电力</td>
+    <td colspan=2>简称“电池”，为周围的机枪塔提供电力
+<br>一个电池最多支持三个机枪塔
+<br>一个电源节点区域内只能放置一组电池和三个机枪塔
+<br>即使房间断电，电池也能为机枪塔供电
+</td>
   </tr>
-  <tr><td colspan=3 style="background-color: 000000">　</td></tr>
+<tr><td align=center style="background-color: 000000"><br>
+<table width=600>
   <tr>
-    <td align=center rowspan=5 style="background-color: 000000"><img src=img/structures/sentry.gif></td>
-    <td colspan=2><span class=tt>机枪塔</span> (Sentry Turret)</td>
+    <td align=center rowspan=4 width=160 style="background-color: 000000"><img src=img/structures/armslab.gif></td>
+    <td colspan=2><span class=tt>哨戒机枪塔</span> (Sentry Turret)</td>
   </tr>
   <tr>
-    <td><span class=tt>造价: </span>10 res</td>
-    <td><span class=tt>造时: </span>7 sec</td>
+    <td><span class=tt>造价: </span>5 res</td>
+    <td><span class=tt>造时: </span>5 sec</td>
   </tr>
   <tr>
-    <td><span class=tt>耐久: </span>1300 hp</td>
-    <td><span class=tt>射程: </span>800 units</td>
+    <td><span class=tt>耐久: </span><br>300 hp<br>350 ap<br>e-hp：1000</td>
+    <td><span class=tt>射程: </span><br>800 units 120°夹角</td>
   </tr>
   <tr>
     <td><span class=tt>攻击力: </span>10 hp/shot</td>
     <td><span class=tt>射击间隔: </span>0.70 sec/shot</td>
   </tr>
   <tr>
-    <td colspan=2>自动攻击周围的敌人，需要由TF提供电力，对Onos伤害减半</td>
+    <td colspan=2>自动攻击周围的敌人，需要由电池提供电力，对Onos伤害减半
+<br>会被lerk毒云和Onos的践踏干扰
+<br>即使停电，电池也能为机枪塔供电
+<br>因为攻击范围有限，需要合理布置
+<br>较为脆弱，需要远离gorger的胆汁炸弹
+</td>
+  </tr>
+<tr><td align=center style="background-color: 000000"><br>
+<table width=600>
+  <tr>
+    <td align=center rowspan=4 width=160 style="background-color: 000000"><img src=img/structures/MAC_idle.gif></td>
+    <td colspan=2><span class=tt>修建机器人</span> (MAC)</td>
+  </tr>
+  <tr>
+    <td width=220><span class=tt>造价: </span>5 res</td>
+    <td width=220><span class=tt>造时: </span>7 sec</td>
+  </tr>
+  <tr>
+    <td><span class=tt>耐久: </span><br>300 hp<br>350 ap<br>e-hp：1000</td>
+    <td><span class=tt>用途: </span>额外修建，维修</td>
+  </tr>
+  <tr>
+    <td colspan=2>简称“小机器人”
+<br>为陆战队员维修护甲
+<br>直接受令于指挥，用于建造建筑维修设施，节约人力
+<br>有过一大堆小机器人绕后修门的战术，避开异形的嗅探感知
+<br>吉祥物
+</td>
   </tr>
   <tr><td colspan=3 style="background-color: 000000">　</td></tr>
   <tr>
     <td align=center rowspan=5 style="background-color: 000000"><img src=img/structures/siege.gif></td>
-    <td colspan=2><span class=tt>攻城炮</span> (Siege Cannon)</td>
+    <td colspan=2><span class=tt>攻城坦克</span> (ARC)</td>
   </tr>
   <tr>
-    <td><span class=tt>造价: </span>15 res</td>
+    <td><span class=tt>造价: </span>10 res</td>
     <td><span class=tt>造时: </span>10 sec</td>
   </tr>
   <tr>
-    <td><span class=tt>耐久: </span>2000 hp</td>
+    <td><span class=tt>耐久: </span><br>3000 hp<br>200 ap<br>e-hp：3400</td>
     <td><span class=tt>射程: </span>1100 units</td>
   </tr>
   <tr>
@@ -217,7 +328,7 @@
     <td><span class=tt>射击间隔: </span>4.00 sec/shot</td>
   </tr>
   <tr>
-    <td colspan=2>射程超远的中华加农炮XD，无视障碍物的音波攻击（射穿墙的说），只对建筑开火，对建筑双倍伤害，命中建筑后的溅射伤害不会波及玩家，没有最短射程<br>需要由高级TF支持电力</td>
+    <td colspan=2>射程超远的中华加农炮XD，无视障碍物的音波攻击（射穿墙的说），只对建筑开火，对建筑双倍伤害，命中建筑后的溅射伤害不会波及玩家，没有最短射程</td>
   </tr>
 </table>
 <br></td></tr>
