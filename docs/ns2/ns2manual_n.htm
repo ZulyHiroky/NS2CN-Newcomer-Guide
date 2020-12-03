@@ -1,34 +1,83 @@
+
 <html>
+    <head>
+        <meta charset="utf-8" />
+        <title>NS2CN手册</title>
+        <style>
+            .wrap {
+                position: relative;
+                top: 10
+                background-color: ;
+                margin-left: 100px;
+                margin-right: 900px;
+                height: 250px;
+            }
+            .left {
+                position: absolute;
+                top: 10;
+                left: -80px;
+                width: 180px;
+                background: #00f;
+                height: 1700px;
+            }
+            .right {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 20px;
+                background: 0;
+                height: 20px;
+                margin-right: 0px;
+            }
+            .center {
+                position: absolute;
+                top: 10;
+                left: 100;
+                background:;
+                height: 1700px;
+                min-width: 600px;
+                width: 100%;
+            }
+        </style>
+    </head>
+   <body style="background-image: url('css/6nGqyviS.webp')">
+        <div class="wrap">
 
-<head>
-<link href="css/style.css" type=text/css rel=stylesheet>
-<link href="css/color.css" type=text/css rel=stylesheet>
-<title>NS2CNNewcomerGuide</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+     <div class="center" id="main">
+       <iframe name="main" src="general/newbie.htm"  
+            marginwidth=0  
+            marginheight=0 
+            height=100%  
+            width=100%  
+            border=0 
+            frameborder=0 
+            target="main"
+>
+        </iframe>
+     </div>
 
-
-</head>
-
-
-<body style="background-image: url('css/6nGqyviS.webp')" link=000000 vlink=000000 alink=000000>
-
-    <div id="contents" style="position:absolute; width:600px; height:1700; z-index:1; left: 70px; top: 70px">
-      <iframe name="contents" src="contents.htm" marginwidth=0 marginheight=0 height=100% width=100% border=0 frameborder=0 target="main"></iframe>
+     <div class="left" id="contents">
+      <iframe name="contents" src="contents.htm"  
+           marginwidth=0  
+           marginheight=0 
+           height=100% 
+           width=100% 
+           border=0 frameborder=0  
+           target="main"
+>
+      <head> <meta http-equiv="Content-Type" content="text/html; charset=gbk" /></head>
+     </iframe>
     </div>
 
-     <div id="main" style="position:absolute; width:700; height:1700; z-index:1; left:230px; top: 70px">
-       <iframe name="main" src="general/newbie.htm" marginwidth=0 marginheight=0 height=100% width=100% border=0 frameborder=0 target="main"></iframe>
-     </div>
-
-     <div id="backbutton" style="position:absolute; width:50px; height:50px; z-index:1; left: 800px; top: 70px">
+            <div class="right" id="backbutton">
        <blockquote>
          <p>
-            <a href="javascript:history.back()" title="back"><img src=css/back.gif></a>
+            <a href="javascript:history.back()" title="back">
+              <img src=css/back.gif>
+             </a>
          </p>
        </blockquote>
-     </div>
-
-</body>
-
-
+           </div>
+   </div>
+  </body>
 </html>
