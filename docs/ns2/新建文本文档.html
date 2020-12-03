@@ -1,0 +1,184 @@
+<html>
+<head>
+<meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script type="text/javascript">
+var itemHeight = 40;
+var dividerHeight = 1;
+
+function openMenu(obj) {
+    menuTitleId = obj.id;
+    menuId = "menu" + menuTitleId.substring(10);
+    indicatorId = "indicator" + menuTitleId.substring(10);
+
+    menu = document.getElementById(menuId);
+    indicator = document.getElementById(indicatorId);
+    height = menu.style.height;
+
+    if (height == "0px" || height == "") {
+        childAmount = menu.getElementsByTagName('div').length;
+        dividerAmount = menu.getElementsByTagName('li').length;
+        height = childAmount * itemHeight + dividerAmount * dividerHeight;
+        menu.style.height = height + "px";
+        indicator.style.transform = "rotate(180deg)";
+    } else {
+        menu.style.height = "0px";
+        indicator.style.transform = "rotate(0deg)";
+    }
+}
+</script>
+<style>
+  .menus {
+width: 320px;
+overflow: hidden;
+box-shadow: 1px 1px 4px gray;
+/* border-bottom: 1px solid black;
+border-top: 1px solid black; */
+border: 1px solid gray;
+border-radius: 5px;
+}
+
+.menu {
+overflow: hidden;
+height: 0px;
+transition: all 0.3s ease;
+}
+
+.menu_title {
+width: 305px;
+height: 50px;
+line-height: 50px;
+background: #fafafa;
+color: gray;
+font-size: 20px;
+padding-left: 15px;
+transition: all 0.3s ease;
+cursor: pointer;
+position: relative;
+font-weight: bold;
+overflow: hidden;
+}
+
+.menu_title:hover {
+background: #dedede;
+color: black;
+}
+
+.indicator {
+width: 50px;
+height: 50px;
+font-weight: bold;
+position: absolute;
+right: 0px;
+top: 0px;
+transition: all 0.3s ease;
+font-weight: bold;
+text-align: center;
+}
+
+.item {
+width: 290px;
+height: 40px;
+line-height: 40px;
+background: gray;
+color: white;
+padding-left: 30px;
+transition: all 0.3s ease;
+cursor: pointer;
+overflow: hidden;
+}
+
+.item:hover {
+background: #B22222;
+}
+
+.item a {
+width: 290px;
+height: 40px;
+display: block;
+text-decoration: none;
+color: white;
+text-decoration: none;
+}
+
+.item_divider {
+width: 322px;
+height: 1px;
+background: white;
+display: block;
+opacity: 0.8;
+}
+
+.menu_divider {
+width: 100%;
+height: 1px;
+background: gray;
+}
+
+
+</style>
+</head>
+<body>
+
+<div class="menus">
+
+    <div id="menu_title1" class="menu_title" onclick="openMenu(this)">
+        Menu1
+        <div class="indicator" id="indicator1">^</div>
+    </div>
+    <div class="menu" id="menu1">
+        <div class="item">
+            <a href="#">Item1</a>
+        </div>
+        <li class="item_divider"></li>
+        <div class="item">
+            <a href="#">Item2</a>
+        </div>
+        <li class="item_divider"></li>
+        <div class="item">
+            <a href="#">Item3</a>
+        </div>
+        <li class="item_divider"></li>
+        <div class="item">
+            <a href="#">Item4</a>
+        </div>
+    </div>
+
+    <li class="menu_divider"></li>
+
+    <div id="menu_title2" class="menu_title" onclick="openMenu(this)">
+        Menu2
+        <div class="indicator" id="indicator2">^</div>
+    </div>
+    <div class="menu" id="menu2">
+        <div class="item">
+            <a href="#">Item1</a>
+        </div>
+        <li class="item_divider"></li>
+        <div class="item">
+            <a href="#">Item2</a>
+        </div>
+    </div>
+
+    <li class="menu_divider"></li>
+
+    <div id="menu_title3" class="menu_title" onclick="openMenu(this)">
+        Menu3
+        <div class="indicator" id="indicator3">^</div>
+    </div>
+    <div class="menu" id="menu3">
+        <div class="item">
+            <a href="#">Item1</a>
+        </div>
+        <li class="item_divider"></li>
+        <div class="item">
+            <a href="#">Item2</a>
+        </div>
+        <li class="item_divider"></li>
+        <div class="item">
+            <a href="#">Item3</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
