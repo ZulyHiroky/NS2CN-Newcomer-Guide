@@ -1,7 +1,5 @@
-BODY     {background:black; color: ACF4FF; font-family: verdana}
-TD       {background: 000000}
-
-BODY,a:active,a:link,a:visited,a:hover     {cursor:url(../css/cursor.cur)}
+BODY     {background:; color: CCCCCC; font-family: verdana; font-weight:bold}
+TD       {background: 222222}
 
 a:active  {text-decoration: none}
 a:link    {text-decoration: none}
