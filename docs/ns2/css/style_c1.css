@@ -1,0 +1,39 @@
+            .wrap {
+                position: relative;
+                top: -20px；
+                background-color:black ;
+                margin-left: 0px;
+                margin-right: 0px;
+                height: 1000px;
+            }
+            .left {
+                position: absolute;
+                top: 10;
+                left: 20px;
+                width: 180px;
+                background:;
+                height:1800;
+            }
+            .right {
+                position: absolute;
+                top: 40
+                background-color:green ;
+                margin-left: 780px;
+                height: 20px;
+            }
+            .center {
+                position: absolute;
+                top: 10;
+                left: 200;
+                overflow: hidden;
+                background: black;
+                height: 1800px;
+                min-width: 680px;
+                width: 45%;
+                box-shadow: 1px 1px 4px gray;
+                /* border-bottom: 1px solid black;
+                border-top: 1px solid black; */
+                border: 1px solid gray;
+                border-radius: 5px;
+            }
+
