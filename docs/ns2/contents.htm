@@ -4,302 +4,394 @@
 
 <link href="css/style.css" type=text/css rel=stylesheet>
 <link href="css/color.css" type=text/css rel=stylesheet>
-<title>NS2手册</title>
+<title>NS2-net</title>
 <meta http-equiv="Content-Type"content="text/html; charset=utf-8">
-
-<script type="text/javascript">
-var itemHeight = 40;
-var dividerHeight = 1;
-
-function openMenu(obj) {
-    menuTitleId = obj.id;
-    menuId = "menu" + menuTitleId.substring(10);
-    indicatorId = "indicator" + menuTitleId.substring(10);
-
-    menu = document.getElementById(menuId);
-    indicator = document.getElementById(indicatorId);
-    height = menu.style.height;
-
-    if (height == "0px" || height == "") {
-        childAmount = menu.getElementsByTagName('div').length;
-        dividerAmount = menu.getElementsByTagName('li').length;
-        height = childAmount * itemHeight + dividerAmount * dividerHeight;
-        menu.style.height = height + "px";
-        indicator.style.transform = "rotate(180deg)";
-    } else {
-        menu.style.height = "0px";
-        indicator.style.transform = "rotate(0deg)";
-    }
-}
-</script>
 
 </head>
 
-<body link=000000 vlink=000000 alink=000000>
+<body>
 
-<div class="menus">
-
-    <div id="menu_title1" class="menu_title" onclick="openMenu(this)">
-        简介
-        <div class="indicator" id="indicator1">^</div>
-    </div>
-    <div class="menu" id="menu1">
-        <div class="item">
-            <a align=left href=general/introduction.htm title="Introduction" target="main" ><span class=w1>
-            
-                简介
-            
-            </a>
-        </div>
-        
-        <div class="item">
-            <a href=general/story.htm  title="the setting of the story.htm" target="main"><span class=w1>
-            
+  <a align=center href=general/introduction.htm title="Introduction" target="main" >
+   <span class=n1>
+         简介
+   </span>
+  </a>
+<hr>
+      <a href=general/story.htm  title="the setting of the story.htm" target="main">
+            <span class=n1>
                  故事背景
-            
-            </a>
-        </div>
-        
-        <div class="item">
-            <a href=general/controls.htm title="Controls" target="main"><span class=w1>
-      
-                操作方法
-      
-            </a>
-        </div>
-        
-    </div>
+            </span>
+      </a>
+  <hr>
+    <a href=general/controls.htm title="Controls" target="main">
+      <span class=n1>
+            操作方法
+      </span>
+    </a>
+<hr>
+     <a href=nsmode/map.htm title="Controls" target="main">
+        <span class=n1>
+              熟悉地图
+        </span>
+     </a>
+  <hr>
+      <a href=nsmode/intro_ns.htm title="NS MOD" target="main">
+            <span class=n1>
+                  地图要点
+            </span>
+      </a>
+  <hr>
+     <a href=general/newbie.htm title="Controls" target="main">
+        <span class=m1>
+              新人指南
+        </span>
+     </a>
+  <hr>
+    <a href=marine/intro_m.htm title="Marines" target="main">
+        <span class=m1>
+              人类基本教学
+        </span>
+    </a>
+<br>
+     <a href=marine/hud.htm#index title="ＨＵＤ" target="main">
+        <span class=m1>
+              界面HUD
+         </span>
+      </a>
+<br>
+　 <a href=marine/hud.htm#order title="Order" target="main">
+         <span class=m1>
+               命令图标
+         </span>
+    </a>
+<br>
+     <a href=marine/items.htm title="Items" target="main">
+          <span class=m1>
+                各类道具
+          </span>
+     </a>
+<br>
+　<a href=marine/items.htm#Ammo title="Ammo and Health" target="main">
+         <span class=m1>
+               消耗品
+          </span>
+    </a>
+<br>
+　<a href=marine/items.htm#Weapon title="Weapons" target="main">
+         <span class=m1>
+               武器
+          </span>
+    </a>
+<br>
+　<a href=marine/items.htm#Armor title="Armors" target="main">
+         <span class=m1>
+              装备
+         </span>
+    </a>
+<br>
+　<a href=marine/soldiers.htm#index title="Soldiers" target="main">
+         <span class=m1>
+               兵种
+         </span>
+    </a>
+<br>
+　　<a href=marine/soldiers.htm#LA title="Light Armor" target="main">
+            <span class=m1>
+                  轻装步兵LA
+            </span>
+       </a>
+<br>
+　　<a href=marine/soldiers.htm#JP title="Jet-pack" target="main">
+            <span class=m1>
+                  飞行兵JP
+             </span>
+       </a>
+<br>
+　　<a href=marine/soldiers.htm#Exosuit_minigun title="Exosuit_minigun" target="main">
+            <span class=m1>
+                  转轮机甲Exo
+            </span>
+       </a>
+<br>
+　　<a href=marine/soldiers.htm#Exosuit_railgun title="Exosuit_railgun" target="main">
+            <span class=m1>
+                 镭射机甲Exo
+            </span>
+       </a>
+<br>
+　　<a href=marine/soldiers.htm#COMM title="Commander" target="main">
+            <span class=m1>
+                  指挥官Comm
+             </span>
+       </a>
+<br>
+　   <a href=marine/structures.htm#index title="Structures" target="main">
+         <span class=m1>
+               建筑
+          </span>
+      </a>
+<br>
+　　<a href=marine/structures.htm#BS title="Basic" target="main">
+            <span class=m1>
+                  基本建筑
+            </span>
+       </a>
+<br>
+　　<a href=marine/structures.htm#RS title="Research" target="main">
+            <span class=m1>
+                  研究建筑
+            </span>
+       </a>
+<br>
+　　<a href=marine/structures.htm#DS title="Defensive" target="main">
+            <span class=m1>
+                  防御建筑
+             </span>
+        </a>
+<br>
+　<a href=marine/tech.htm title="Tech-tree" target="main">
+         <span class=m1>
+               科技树
+          </span>
+    </a>
+<br>
+　<a href=ccmanual.htm title="Commmander Manual" target="_top">
+         <span class=m1>
+               指挥界面
+         </span>
+    </a>
 
-    <div id="menu_title2" class="menu_title" >
-         <a href=nsmode/veil.htm title="MAP" style="color:gray" target="main">
-           地图要点
-<div class="indicator" id="indicator1">></div>
+
+
+
+  <hr>
+     <a href=general/newbie.htm title="Controls" target="main">
+        <span class=a1>
+              异形指南
+        </span>
+     </a>
+<hr>
+    <a href=alien/intro_a.htm title="Aliens" target="main">
+          <span class=a1>
+                异形基本教学
+           </span>
+     </a>
+<br>
+　  <a href=alien/hud.htm#index title="ＨＵＤ" target="main">
+           <span class=a1>
+                 界面HUD
+            </span>
+      </a>
+<br>
+　　<a href=alien/hud.htm#hs title="Hive Sight" target="main">
+            <span class=a1>
+                  心灵感应
+             </span>
+       </a>
+<br>
+　   <a href=alien/lifeforms.htm#index title="Lifeforms" target="main">
+            <span class=a1>
+                  生命形态
+            </span>
+       </a>
+<br>
+　　<a href=alien/lifeforms.htm#egg title="Gestation Egg" target="main">
+            <span class=a1>
+                  蛹egg
+             </span>
+        </a>
+<br>
+　　<a href=alien/lifeforms.htm#skulk title="Skulk" target="main">
+            <span class=a1>
+                  小狗skulk
+             </span>
+        </a>
+<br>
+　　<a href=alien/lifeforms.htm#gorge title="Gorge" target="main">
+             <span class=a1>
+                   小猪gorge
+             </span>
+       </a>
+<br>
+　　<a href=alien/lifeforms.htm#lerk title="Lerk" target="main">
+            <span class=a1>
+                  飞龙lerk
+            </span>
+       </a>
+<br>
+　　<a href=alien/lifeforms.htm#fade title="Fade" target="main">
+            <span class=a1>
+                  螳螂fade
+             </span>
+       </a>
+<br>
+　　<a href=alien/lifeforms.htm#onos title="Onos" target="main">
+            <span class=a1>
+                  牛onos
+             </span>
+       </a>
+<br>
+　    <a href=alien/chambers.htm#index title="Hives and Chambers" target="main">
+             <span class=a1>
+                   异形建筑
+              </span>
+       </a>
+<br>
+　　<a href=alien/chambers.htm#hive title="Hive and Baisc" target="main">
+            <span class=a1>
+                  基本建筑
+            </span>
+       </a>
+<br>
+　　<a href=alien/chambers.htm#evo title="Evolutionary" target="main">
+            <span class=a1>
+                  进化属性巢
+             </span>
+       </a>
+<br>
+　    <a href=alien/evolutions.htm#index title="Evolutions" target="main">
+             <span class=a1>
+                   进化能力
+              </span>
+       </a>
+<br>
+　　<a href=alien/evolutions.htm#DC title="Defensive" target="main">
+            <span class=a1>
+                  防御属性巢
+             </span>
+       </a>
+<br>
+　　<a href=alien/evolutions.htm#MC title="Movement" target="main">
+            <span class=a1>
+                  机动属性巢
+             </span>
+       </a>
+<br>
+　　<a href=alien/evolutions.htm#SC title="Sensory" target="main">
+            <span class=a1>
+                  隐匿属性巢
+             </span>
+      </a>
+<br>
+       <a href=aliencommanul.htm title="Alien Commmander Manual" target="_top">
+             <span class=a1>
+                   指挥界面
+              </span>
+       </a>
+
+
+
+
+<hr>
+
+
+
+
+      <a href=nsmode/intro_ns.htm title="NS MOD" target="main">
+            <span class=n1>
+                  NS模式
+            </span>
+      </a>
+<br>
+　   <a href=nsmode/rules.htm#index title="rules" target="main">
+            <span class=n1>
+                  基本规则
+             </span>
+       </a>
+<br>
+　　<a href=nsmode/rules.htm#marine title="Marines" target="main">
+            <span class=m1>
+                  人类
+             </span>
+       </a>
+<br>
+　　<a href=nsmode/rules.htm#alien title="Aliens" target="main">
+            <span class=a1>
+                  异形
+             </span>
+       </a>
+<br>
+　    <a href=nsmode/popmenu.htm#index title="pop-up menu" target="main">
+             <span class=n1>
+                   右键快捷菜单
+              </span>
+       </a>
+<br>
+　　<a href=nsmode/popmenu.htm#marine title="Marines" target="main">
+            <span class=m1>
+                  人类
+             </span>
          </a>
-    </div>
-
-    <div id="menu_title2" class="menu_title" >
-         <a href="general/newbie.htm" style="color: 0099FF" target="main">
-           新人指导
-<div class="indicator" id="indicator1">></div>
-         </a>
-    </div>
-
-    <div id="menu_title3" style="color: 0099FF" class="menu_title" onclick="openMenu(this)">
-          人类教学
-        <div class="indicator" id="indicator3">^</div>
-    </div>
-    <div class="menu" id="menu3">
-        <div class="item">
-            <a href=marine/hud.htm#index title="ＨＵＤ" target="main"><span class=w1>界面HUD</a>
-        </div>
-        
-        <div class="item">
-            <a href=marine/orders.htm#order title="Order" target="main"><span class=w1>命令图标</a>
-        </div>
-        
-        <div class="item">
-            <a href=marine/intro_m.htm title="Marines" target="main"><span class=w1>基本教学</a>
-        </div>
-</div>
-    <div id="menu_title4" style="color: 0099FF" class="menu_title" onclick="openMenu(this)">
-         各类道具
-        <div class="indicator" id="indicator4">^</div>
-    </div>
-    <div class="menu" id="menu4">
-        <div class="item">
-            <a href=marine/items.htm#Ammo title="Ammo and Health" target="main"><span class=w1>消耗品</a>
-        </div>
-        
-        <div class="item">
-            <a href=marine/items.htm#Weapon title="Weapons" target="main"><span class=w1>武器</a>
-        </div>
-        
-        <div class="item">
-            <a href=marine/items.htm#Armor title="Armors" target="main"><span class=w1>装备</a>
-        </div>
-  </div>
-
-    <div id="menu_title5" style="color: 0099FF" class="menu_title" onclick="openMenu(this)">
-         人类建筑
-        <div class="indicator" id="indicator5">^</div>
-    </div>
-    <div class="menu" id="menu5">
-        <div class="item">
-            <a href=marine/structures.htm#BS title="Basic" target="main"><span class=w1>基本建筑</a>
-        </div>
-        
-        <div class="item">
-            <a href=marine/structures.htm#RS title="Research" target="main"><span class=w1>研究建筑</a>
-        </div>
-        
-        <div class="item">
-            <a href=marine/structures.htm#DS title="Defensive" target="main"><span class=w1>防御建筑</a>
-        </div>
-    </div>
-
-    <div id="menu_title6" style="color: 0099FF" class="menu_title" onclick="openMenu(this)">
-         人类指挥
-        <div class="indicator" id="indicator6">^</div>
-    </div>
-    <div class="menu" id="menu6">
-        <div class="item">
-            <a href=marine/ccmanual.htm title="Commmander Manual" target="_top"><span class=w1>指挥界面</a>
-        </div>
-        
-        <div class="item">
-            <a href=marine/tech.htm title="Tech-tree" target="main"><span class=w1>科技树</a>
-        </div>  
-  </div>
-</div>
-
-<div class="menus">
-    <div id="menu_title2" class="menu_title" >
-         <a href="general/newbie - a.htm" style="color: FFB000" target="main">
-           异形指导
-<div class="indicator" id="indicator1">></div>
-         </a>
-    </div>
-
-    <div id="menu_title7" style="color: FFB000" class="menu_title" onclick="openMenu(this)">
-          异形教学
-        <div class="indicator" id="indicator7">^</div>
-    </div>
-    <div class="menu" id="menu7">
-        <div class="item">
-            <a href=alien/hud.htm#index title="ＨＵＤ" target="main"><span class=w1>界面HUD</a>
-        </div>
-        
-        <div class="item">
-            <a href=alien/hud.htm#hs title="Hive Sight" target="main"><span class=w1>母巢视觉</a>
-        </div>
-        
-        <div class="item">
-            <a href=alien/intro_a.htm title="Aliens" target="main"><span class=w1>基本教学</a>
-        </div>
-</div>
-    <div id="menu_title8" style="color: FFB000" class="menu_title" onclick="openMenu(this)">
-         生命形态
-        <div class="indicator" id="indicator8">^</div>
-    </div>
-    <div class="menu" id="menu8">
-        <div class="item">
-            <a href=alien/lifeforms.htm#egg title="Gestation Egg" target="main"><span class=w1>Egg</span></a>
-        </div>
-        
-        <div class="item">
-            <a href=alien/lifeforms.htm#skulk title="Skulk" target="main"><span class=w1>Skulk</span></a>
-        </div>
-        
-        <div class="item">
-            <a href=alien/lifeforms.htm#gorge title="Gorge" target="main"><span class=w1>Gorge</span></a>
-        </div>
-        
-        <div class="item">
-            <a href=alien/lifeforms.htm#lerk title="Lerk" target="main"><span class=w1>Lerk</span></a>
-        </div>
-        
-        <div class="item">
-            <a href=alien/lifeforms.htm#fade title="Fade" target="main"><span class=w1>Fade</span></a>
-        </div>
-        
-        <div class="item">
-            <a href=alien/lifeforms.htm#onos title="Onos" target="main"><span class=w1>Onos</span></a>
-        </div>
-  </div>
-
-    <div id="menu_title9" style="color: FFB000" class="menu_title" onclick="openMenu(this)">
-         异形建筑
-        <div class="indicator" id="indicator9">^</div>
-    </div>
-    <div class="menu" id="menu9">
-        <div class="item">
-            <a href=alien/chambers.htm#rt title="Hive and Baisc" target="main"><span class=w1>基本建筑</a>
-        </div>
-        
-        <div class="item">
-            <a href=alien/chambers.htm#index title="Hives and Chambers" target="main"><span class=w1>防御建筑</a>
-        </div>
-        
-        <div class="item">
-            <a href=alien/chambers.htm#evo title="Evolutionary" target="main"><span class=w1>属性巢</a>
-        </div>
-</div>
-    <div id="menu_title10" style="color: FFB000" class="menu_title" onclick="openMenu(this)">
-         进化能力
-        <div class="indicator" id="indicator10">^</div>
-    </div>
-    <div class="menu" id="menu10">
-        <div class="item">
-            <a href=alien/evolutions.htm#DC title="Defensive" target="main"><span class=w1>防御属性巢</a>
-        </div>
-        
-        <div class="item">
-            <a href=alien/evolutions.htm#MC title="Movement" target="main"><span class=w1>机动属性巢</a>
-        </div>
-        
-        <div class="item">
-            <a href=alien/evolutions.htm#SC title="Sensory" target="main"><span class=w1>隐匿属性巢</a>
-        </div>
-       
-    </div>
-
-    <div id="menu_title11" style="color: FFB000" class="menu_title" onclick="openMenu(this)">
-         异形指挥
-        <div class="indicator" id="indicator11">^</div>
-    </div>
-    <div class="menu" id="menu11">
-        <div class="item">
-             <a href=alien/ccmanual_a.htm title="Alien Commmander Manual" target="_top"><span class=w1>指挥界面</a>
-        </div>
-        
-        <div class="item">
-            <a href=alien/tech.htm title="Tech-tree" target="main"><span class=w1>科技树</a>
-        </div>
-    </div> 
-
-  </div>
-</div>
-<div class="menus">
-    <div id="menu_title12" class="menu_title" onclick="openMenu(this)">
-        NS模式
-        <div class="indicator" id="indicator12">^</div>
-    </div>
-    <div class="menu" id="menu12">
-        
-        <div class="item">
-            <a href=nsmode/rules.htm#index title="rules" target="main"><span class=w1>基本规则</a>
-        </div>
-        
-        <div class="item">
-            <a href=nsmode/strategy_m.htm title="Marines" target="main"><span class=w1>人类战术</a>
-        </div>
-        
-        <div class="item">
-            <a href=nsmode/strategy_a.htm title="Aliens" target="main"><span class=w1>异形战术</a>
-        </div>
-    </div>
+<br>
+　　<a href=nsmode/popmenu.htm#alien title="Aliens" target="main">
+            <span class=a1>
+                  异形
+             </span>
+       </a>
+<br>
+　   <a href=nsmode/strategy.htm title="Stratagem" target="main">
+            <span class=n1>
+                  战略战术
+            </span>
+       </a>
+<br>
+　   <a href=nsmode/map.htm title="Stratagem" target="main">
+            <span class=n1>
+                  地图
+            </span>
+       </a>
+<br>
+　　<a href=nsmode/strategy_m.htm title="Marines" target="main">
+            <span class=m1>
+                 人类
+            </span>
+       </a>
+<br>
+　　<a href=nsmode/strategy_a.htm title="Aliens" target="main">
+            <span class=a1>
+                  异形
+            </span>
+       </a>
+<br>
 
 
-    <div id="menu_title13" class="menu_title" onclick="openMenu(this)">
-        CO模式
-        <div class="indicator" id="indicator13">^</div>
-    </div>
-    <div class="menu" id="menu13">
-        <div class="item">
-            <a href=comode/rules.htm#index title="rules" target="main"><span class=w1>基本规则</a>
-        </div>
-        
-        <div class="item">
-            <a href=comode/popmenu.htm#marine title="Marines" target="main"><span class=w1>人类升级</a>
-        </div>
-        
-        <div class="item">
-            <a href=comode/popmenu.htm#alien title="Aliens" target="main"><span class=w1>异形升级</a>
-        </div>
-    </div>
 
 
-</div>
+<hr>
+
+
+
+
+       <a href=comode/intro_co.htm title="CO MODE" target="main">
+             <span class=n1>
+                   CO模式
+              </span>
+        </a>
+<br>
+　    <a href=comode/rules.htm#index title="rules" target="main">
+             <span class=n1>
+                   基本规则
+              </span>
+        </a>
+<br>
+　    <a href=comode/popmenu.htm#index title="pop-up menu" target="main">
+             <span class=n1>
+                   右键快捷菜单
+             </span>
+        </a>
+<br>
+　　<a href=comode/popmenu.htm#marine title="Marines" target="main">
+            <span class=m1>
+                  人类
+             </span>
+       </a>
+<br>
+　　<a href=comode/popmenu.htm#alien title="Aliens" target="main">
+            <span class=a1>
+                 异形
+            </span>
+      </a>
+<br>
 
 </body>
 
