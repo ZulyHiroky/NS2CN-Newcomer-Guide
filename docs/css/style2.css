@@ -5,10 +5,9 @@
   font-family: "PingFang SC", "Microsoft YaHei UI", sans-serif;
 }
 
- header {
+ .background {
    width: 100vw;
    height: 100vh;
-   transform: translateY(80px);
    background-image: url("../img/6nGqyviS.webp");
    background-size: cover;
  }
@@ -24,7 +23,7 @@
    justify-content: space-between;
    padding: 0 5vw;
    height: 80px;
-   background-color: #555555;
+   background-color: black;
  }
 
  .logo {
@@ -45,7 +44,7 @@
  .nav-menu li {
    list-style: none;
    color: white;
-   font-weight: 600;
+   font-weight: 800;
  }
 
  .burger div {
@@ -68,24 +67,23 @@
     width: 30vw;
     height: calc(100vh);
 
-    background-color: #555555;
+    background-color: black;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
 
     transform: translateX(100%);
-    transition: 0.4s ease-in-out;
+    transition: 0.5s ease-in-out;
 
   }
 
   .nav-menu.open {
-    transform: translateX(0);
+    transform: translateX(-20px);
   }
 
    .nav-menu li {
      margin: 3vh;
-     transform: translateX(0px);
-     transform: translateY(0px);
+     transform: translateY(80px);
      opacity: 1;
   }
 
