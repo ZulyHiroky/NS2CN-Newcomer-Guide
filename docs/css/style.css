@@ -48,16 +48,7 @@ body {
   padding-bottom: 10px;
 }
 
-.heading_container h2::before {
-  content: "";
-  width: 40px;
-  height: 7px;
-  background-color: #f1db25;
-  border-radius: 10px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
+
 
 .heading_container.heading_center {
   -webkit-box-align: center;
@@ -66,11 +57,7 @@ body {
   text-align: center;
 }
 
-.heading_container.heading_center h2::before {
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-}
+
 
 /*header section*/
 .hero_area {
@@ -379,7 +366,7 @@ a:focus {
   display: inline-block;
   padding: 10px 35px;
   background-color: #f1db25;
-  color: #ffffff;
+  color: black;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   border: 1px solid transparent;
@@ -435,16 +422,17 @@ a:focus {
 }
 
 .about_section .img_container .img-box img {
+  height: 380px;
   width: 100%;
 }
 
 .about_section .detail-box {
   background-color: #ffffff;
-  padding: 45px 25px;
+  padding: 10px 35px;
   -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.05);
           box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.05);
   position: relative;
-  margin-left: -45px;
+  margin-left: 0px;
 }
 
 .about_section .detail-box p {
@@ -455,7 +443,7 @@ a:focus {
   display: inline-block;
   padding: 10px 35px;
   background-color: #f1db25;
-  color: #ffffff;
+  color: black;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   border: 1px solid transparent;
@@ -463,9 +451,9 @@ a:focus {
 }
 
 .about_section .detail-box a:hover {
-  background-color: transparent;
-  border-color: #f1db25;
-  color: #f1db25;
+  background-color:  #1c1c1c;
+  border-color:#f1db25;
+  color:#f1db25;
 }
 
 .service_section {
@@ -504,9 +492,9 @@ a:focus {
 
 .service_section .box .detail-box a {
   display: inline-block;
-  padding: 8px 35px;
+  padding: 10px 35px;
   background-color: #f1db25;
-  color: #ffffff;
+  color: #1c1c1c;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   border: 1px solid transparent;
@@ -514,9 +502,9 @@ a:focus {
 }
 
 .service_section .box .detail-box a:hover {
-  background-color: transparent;
-  border-color: #f1db25;
-  color: #f1db25;
+  background-color:  #1c1c1c;
+  border-color:#f1db25;
+  color:#f1db25;
 }
 
 .client_section {
@@ -591,8 +579,8 @@ a:focus {
   height: 45px;
   border: none;
   opacity: 1;
-  background-color: #1c1c1c;
-  color: #ffffff;
+  background-color:black;
+  color:black;
   border-radius: 100%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -756,11 +744,11 @@ a:focus {
 .team_section .box .detail-box {
   position: absolute;
   width: 100%;
-  color: #ffffff;
+  color: black;
   padding: 25px 15px;
   text-align: center;
   bottom: 0;
-  background-color: rgba(28, 28, 28, 0.75);
+  background-color: black;
 }
 
 .team_section .btn-box {
