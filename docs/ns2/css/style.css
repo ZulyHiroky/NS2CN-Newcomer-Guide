@@ -1,40 +1,51 @@
-BODY     {background:; color: FFB000; font-family: verdana}
+BODY      {color:#FFB000;}
 a:active  {text-decoration: none}
 a:link    {text-decoration: none}
 a:visited {text-decoration: none}
-<br>
+
+.left {
+    position: absolute;
+    top: 100px;
+    left: 20px;
+    right: 20px;
+    width: 165px;
+    height:1800px;
+    z-index: 2;
+}
+
             .wrap {
-                position: relative;
-                top: -20px；
-                background-color:black ;
-                margin-left: 0px;
-                margin-right: 0px;
-                height: 1000px;
-            }
-            .left {
                 position: absolute;
-                top: 10;
-                left: 20px;
-                width: 180px;
-                background:;
-                height:1800;
+                top: 100px;
+                left:200px;
+                overflow: hidden;
+                background: black;
+                height: 1800px;
+                min-width: 700px;
+                width: 700px;
+                box-shadow: 1px 1px 4px gray;
+                /* border-bottom: 1px solid black;
+                border-top: 1px solid black; */
+                border: 1px solid gray;
+                border-radius: 5px;
+                z-index: 1;
             }
+
             .right {
-                position: absolute;
-                top: 40
+                position: relative;
+                top: 40px;
                 background-color:green ;
                 margin-left: 850px;
                 height: 20px;
             }
             .center {
-                position: absolute;
-                top: 10;
-                left: 200;
+                position: relative;
+                top: 0;
+                left: 0;
                 overflow: hidden;
                 background: black;
                 height: 1800px;
-                min-width: 680px;
-                width: 45%;
+                min-width: 700px;
+                width: 700px;
                 box-shadow: 1px 1px 4px gray;
                 /* border-bottom: 1px solid black;
                 border-top: 1px solid black; */
@@ -54,7 +65,7 @@ border-radius: 5px;
 
 .menu {
 overflow: hidden;
-height: 0px;
+height: 0;
 transition: all 0.3s ease;
 }
 
@@ -83,8 +94,8 @@ width: 50px;
 height: 50px;
 font-weight: bold;
 position: absolute;
-right: 0px;
-top: 0px;
+right: 0;
+top: 0;
 transition: all 0.3s ease;
 font-weight: bold;
 text-align: center;
