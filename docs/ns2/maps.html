@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="glide.min.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="glide.core.min.css">
+    <link rel="stylesheet" href="glide.theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="images glide">
+      <div class="glide__track" data-glide-el="track">
+        <ul class="glide__slides">
+          <li class="glide__slide">
+            <img src="images/1.png" alt="">
+          </li>
+
+          <li class="glide__slide">
+            <img src="images/2.png" alt="">
+          </li>
+
+          <li class="glide__slide">
+            <img src="images/3.png" alt="">
+          </li>
+
+          <li class="glide__slide">
+            <img src="images/4.png" alt="">
+          </li>
+
+          <li class="glide__slide">
+            <img src="images/5.png" alt="">
+          </li>
+
+          <li class="glide__slide">
+            <img src="images/6.png" alt="">
+          </li>
+        </ul>
+      </div>
+
+      <div class="glide__arrows" data-glide-el="controls">
+        <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i class="fas fa-arrow-left"></i></button>
+        <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><i class="fas fa-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <script>
+      new Glide(".images",{
+        type: 'carousel',
+        perView: 5,
+        focusAt: 'center',
+        gap: 40,
+        breakpoints: {
+          1200:{
+            perView: 3
+          },
+          800:{
+            perView: 2
+          }
+        }
+      }).mount();
+    </script>
+  </body>
+</html>

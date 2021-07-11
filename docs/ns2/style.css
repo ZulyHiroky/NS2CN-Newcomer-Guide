@@ -1,0 +1,29 @@
+body{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #333;
+}
+
+.glide__slide img{
+  width: 100%;
+}
+
+.glide__slide{
+  filter: blur(6px);
+  opacity: .7;
+  transition: .3s linear;
+}
+
+.glide__slide--active{
+  opacity: 1;
+  filter: none;
+  transform: scale(1.1);
+}
+
+.glide__slides{
+  overflow: visible;
+}
