@@ -34,7 +34,7 @@ body {
     height: 100%;
     display: flex;
     max-width: 1030px;
-    max-height: 860px;   
+    max-height: 800px;   
     overflow: hidden;
     position:absolute;
     left: 200px;
