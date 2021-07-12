@@ -34,7 +34,7 @@ body {
     height: 100%;
     display: flex;
     max-width: 1030px;
-    max-height: 800px;   
+    max-height: 860px;   
     overflow: hidden;
     position:absolute;
     left: 200px;
@@ -51,7 +51,7 @@ body {
       -webkit-align-items: center;
     -webkit-justify-content: flex-end;
     position: absolute;
-    background-color: #fafafa;
+    background-color: #0000001c;
     flex-shrink: 0;
    -webkit-flex-shrink: 0;
     position: absolute;
@@ -92,18 +92,18 @@ body {
     background-repeat: no-repeat;
     background-size: 100%;
    position:relative;
-  transform: translateX(25%);
+  transform: translateX(100%);
   transition: 0.6s all ease-in-out;
 }
 
 .carousel-item_subtitle {
     font-family: 'Open Sans', sans-serif;
-    letter-spacing: 3px;
-    font-size: 10px;
+    letter-spacing: 5px;
+    font-size: 40px;
     text-transform: uppercase;
     margin: 0;
-    color: #7E7E7E;    
-    font-weight: 700;
+    color: rgb(255, 255, 255);    
+    font-weight: bold;
     transform: translateY(25%);
     opacity: 0;
     visibility: hidden;
@@ -112,12 +112,12 @@ body {
 
 .carousel-item_title {
     margin: 15px 0 0 0;
-    font-family: 'Playfair Display', serif;
+    font-family: '微软雅黑', sans-serif;
     font-size: 44px;
     line-height: 45px;
-    letter-spacing: 3px;
-    font-weight: 700;
-    color: #2C2C2C;
+    letter-spacing: 5px;
+    font-weight: bold;
+    color: #0099FF;
     transform: translateY(25%);
     opacity: 0;
     visibility: hidden;
@@ -130,9 +130,10 @@ body {
     visibility: hidden;
     transition: 0.6s all ease-in-out;
     margin-top: 35px;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 13px;
-    color: #7e7e7e;
+    font-family: '微软雅黑', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    color: #FFB000;
     line-height: 22px;
     margin-bottom: 35px;
 }
