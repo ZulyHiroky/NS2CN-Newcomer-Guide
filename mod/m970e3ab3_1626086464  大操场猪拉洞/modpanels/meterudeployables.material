@@ -1,0 +1,3 @@
+shader = "shaders/ModPanel.surface_shader"
+panel  = "modpanels/meterudeployables.dds"
+url    = "https://steamcommunity.com/sharedfiles/filedetails/?id=2534292147"

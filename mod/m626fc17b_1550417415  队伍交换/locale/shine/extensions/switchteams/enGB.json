@@ -1,0 +1,11 @@
+{
+  "NOTIFY_PREFIX": "[Switch Teams]",
+  "NOTONTEAM": "You are not on a team. Cannot switch teams.",
+  "GAMESTARTED": "The game has started. Cannot switch teams.",
+  "SWITCHINGPLAYERS": "{SwitchName_1} and {SwitchName_2} are switching teams.",
+  "SWITCHPLAYER": "{SwitchName} is switching teams because of team size imbalance.",
+  "FEEDBACKMESSAGE1": "{RequestName} has requested to switch teams if balance will not suffer.",
+  "FEEDBACKMESSAGE2": "Type !switch in chat to request a team switch.",
+  "FORGETMESSAGE": "Your request to switch teams has been forgotten.",
+  "CONFIRMMESSAGE": "Your request to switch teams is confirmed. Searching for player to switch with...",
+}

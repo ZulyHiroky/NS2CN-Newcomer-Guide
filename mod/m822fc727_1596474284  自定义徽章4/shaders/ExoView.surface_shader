@@ -1,0 +1,62 @@
+<shader>
+	
+	<inputs>
+		<input name="albedoMap" type="texture" address="wrap" />
+		<input name="normalMap" type="texture" address="wrap" />
+		<input name="specularMap" type="texture" address="wrap" />
+		<input name="emissiveMap" type="texture" address="wrap" srgb="true"/>
+		<input name="lightMap" type="texture" address="wrap" srgb="true"/>
+		<input name="closeAmount" type="float">0.0</input>
+		<input name="eightgreen" type="float">0.0</input>
+	</inputs>
+	
+    
+    <params>
+        <param name="vsNormal">true</param>
+    </params>	
+	
+	<code>
+	<![CDATA[
+		float3 DecodeNormal(const float4 texNormal)
+		{
+			float4 n = texNormal * 2 - 1;
+			//return float3(n.a, n.g, sqrt(1 - dot(n.ag, n.ag)) );
+			return n.xyz;
+		}
+		void MaterialShader(in Material_Input input, inout Material material)
+		{
+		
+			float4 specularGloss = tex2D(specularMap, input.texCoord);
+			
+			float3 albedo   = tex2D(albedoMap, input.texCoord).rgb;
+			float3 emissive = tex2D(emissiveMap, input.texCoord).rgb;
+			float3 light    = tex2D(lightMap, input.texCoord);
+			
+			// Hacky specular inside the cockpit.
+			float3 specular = pow(saturate(dot(input.vsNormal, normalize(float3(0, 1, -1)))), 100) * specularGloss.rgb;
+	
+			float closeFraction = pow(closeAmount, 4);
+	
+			material.albedo 	= albedo * (1 - closeFraction);
+			material.tsNormal 	= DecodeNormal( tex2D(normalMap, input.texCoord) );
+			material.specular	= specularGloss.rgb * (1- closeFraction);
+			material.gloss		= specularGloss.a;
+			material.emissive   = emissive * closeAmount * 2 + (light * albedo + specular) * closeFraction;
+			
+            if (eightgreen >= 0.5){ 
+                float _ = material.albedo.r;
+                material.albedo.r = material.albedo.g;
+                material.albedo.g = _;
+                _ = material.emissive.r;
+                material.emissive.r = material.emissive.g;
+                material.emissive.g = _;
+                material.gloss		= pow(material.gloss, 0.1);
+            }
+            
+			material.id = 1;
+			
+		}
+	]]>		
+	</code>
+
+</shader>

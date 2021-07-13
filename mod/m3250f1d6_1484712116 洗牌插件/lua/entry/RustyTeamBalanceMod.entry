@@ -1,0 +1,4 @@
+modEntry = {
+	FileHooks = "lua/RustyTeamBalanceMod/FileHooks.lua",
+	Priority = 10
+}

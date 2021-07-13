@@ -1,0 +1,4 @@
+modEntry = {
+	FileHooks = "lua/ModPanelsPlusPlus/FileHooks.lua",
+	Shared    = "lua/ModPanelsPlusPlus/Shared.lua"
+}

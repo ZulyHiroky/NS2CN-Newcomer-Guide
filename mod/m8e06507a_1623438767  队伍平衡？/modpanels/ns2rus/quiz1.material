@@ -1,0 +1,4 @@
+shader = "shaders/ModPanel.surface_shader"
+panel  = "modpanels/ns2rus/quiz1.dds"
+url    = "https://forms.gle/QBZU5pq2unmiGESU6"
+size   = {1, 1}

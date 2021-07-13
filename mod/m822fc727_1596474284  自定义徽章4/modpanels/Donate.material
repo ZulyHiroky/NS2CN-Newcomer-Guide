@@ -1,0 +1,5 @@
+shader = "shaders/ModPanel.surface_shader"
+panel   = "modpanels/Donate.dds"
+size     = {0.50, 0.50}
+url       = "https://streamlabs.com/gorgeselection"
+

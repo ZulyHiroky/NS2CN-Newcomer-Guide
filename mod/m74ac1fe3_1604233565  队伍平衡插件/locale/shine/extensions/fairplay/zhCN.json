@@ -1,0 +1,16 @@
+{
+	"NOTIFY_PREFIX":"[平衡上场]",
+	"OK_LESS_PLAYER": "你可以随时加入人数较少的一方",
+	"OK_CHOICE":"欢迎加入你选择的阵营！",
+	"OK_MARINES":"欢迎加入陆战队！",
+	"OK_ALIENS":"欢迎加入异形！",
+	"ERROR_0": "Sorry, you can't join any team due to the teams balance! Consider to start a 'Randomize readyroom' vote",
+	"ERROR_1": "抱歉，由于队伍不平衡，你不能加入该阵营",
+	"ERROR_2": "请等待队伍平衡出现变化，要么你现在就加入另一边",
+	"TEXT_CURRENT":"当前场上队伍平衡度对比:",
+	"TEXT_JOIN_M":"若你加入陆战队(M)，平衡度将变成:",
+	"TEXT_JOIN_A":"若你加入异形(A)，平衡度将变成:",
+    "INFO_SEED":"SEEDING GAME! Game will reset on player count: ",
+	"INFO_GAME":"ACCOUNTED GAME! Balance will be kept fair above playercount: ",
+	"INFO_RESET":"Seeding phase is over, Game will reset."
+}

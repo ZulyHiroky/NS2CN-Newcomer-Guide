@@ -1,0 +1,5 @@
+shader = "shaders/ModPanel.surface_shader"
+panel   = "modpanels/SteamGroup.dds"
+size     = {0.25, 0.25}
+url       = "http://steamcommunity.com/groups/8bitgamingcommunity#announcements"
+

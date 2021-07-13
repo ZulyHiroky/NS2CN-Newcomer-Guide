@@ -1,0 +1,28 @@
+<shader>
+
+	<inputs>
+		<input name="panel" type="texture" address="wrap" srgb="true"/>
+	</inputs>
+
+	<params>
+		<param name="alphaTest">true</param>
+	</params>
+
+	<code>
+	<![CDATA[
+		void MaterialShader(in Material_Input input, inout Material material)
+		{
+			float4 pixel = tex2D(panel, input.texCoord);
+
+			material.albedo 	= pixel.rgb;
+			material.tsNormal 	= float3(0.5, 0.5, 1);
+			material.specular	= pixel.rgb;
+			material.gloss		= 0;
+			material.emissive   = pixel.rgb;
+			material.opacity    = pixel.a;
+			material.id         = 0;
+		}
+	]]>
+	</code>
+
+</shader>

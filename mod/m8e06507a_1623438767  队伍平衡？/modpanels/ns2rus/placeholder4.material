@@ -1,0 +1,2 @@
+shader = "shaders/ModPanel.surface_shader"
+panel  = "modpanels/ns2rus/placeholder1.dds"

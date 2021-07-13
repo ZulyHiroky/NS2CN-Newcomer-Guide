@@ -1,0 +1,4 @@
+shader = "shaders/ModPanel.surface_shader"
+panel   = "modpanels/Rules.dds"
+size     = {0.25, 0.25}
+url       = "https://2sasa2.wixsite.com/gsrules"

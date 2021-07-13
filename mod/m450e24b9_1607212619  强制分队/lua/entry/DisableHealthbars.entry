@@ -1,0 +1,4 @@
+modEntry = {
+FileHooks = "lua/DisableHealthbars/FileHooks.lua",
+Priority = 10
+}

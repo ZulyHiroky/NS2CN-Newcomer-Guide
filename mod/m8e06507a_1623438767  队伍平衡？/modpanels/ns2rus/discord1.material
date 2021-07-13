@@ -1,0 +1,4 @@
+shader = "shaders/ModPanel.surface_shader"
+panel  = "modpanels/ns2rus/discord1.dds"
+url    = "https://discord.gg/WwdpdAE"
+size   = {1, 1}

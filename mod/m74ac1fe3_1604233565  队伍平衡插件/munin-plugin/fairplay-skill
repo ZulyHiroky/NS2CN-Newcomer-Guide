@@ -1,0 +1,42 @@
+#!/bin/bash
+logfile="/home/ns2server/testserver/logs/log-Server.txt"
+
+output_config() {
+    	echo "graph_title GS Fairplay Skill Differences"
+	echo "graph_category games"
+	echo "skilldiff.label Skill differences"
+}
+
+output_values() {
+	parsethis=$(grep 'FairplayPluginMuninData' $logfile | tail -n1)
+	team1skill=$(echo $parsethis | awk -F';' '{print $4}')
+	team2skill=$(echo $parsethis | awk -F';' '{print $5}')
+	let skilldiff=$team1skill-$team2skill
+	printf "skilldiff.value %d\n" $skilldiff
+}
+
+output_usage() {
+    printf >&2 "%s - munin plugin to graph server stats\n" ${0##*/}
+    printf >&2 "Usage: %s [config]\n" ${0##*/}
+}
+
+case $# in
+    0)
+        output_values
+        ;;
+    1)
+        case $1 in
+            config)
+                output_config
+                ;;
+            *)
+                output_usage
+                exit 1
+                ;;
+        esac
+        ;;
+    *)
+        output_usage
+        exit 1
+        ;;
+esac

@@ -1,0 +1,4 @@
+modEntry = {
+    FileHooks = "lua/SBClockV2/FileHooks.lua",
+    Priority = 50
+}

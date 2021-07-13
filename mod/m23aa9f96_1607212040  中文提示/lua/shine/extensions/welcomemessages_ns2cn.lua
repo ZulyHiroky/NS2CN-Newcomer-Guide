@@ -1,0 +1,266 @@
+--[[
+    Shine welcome message plugin.
+]]
+
+local Shine = Shine
+
+local GetOwner = Server.GetOwner
+local IsType = Shine.IsType
+local StringFormat = string.format
+local TableEmpty = table.Empty
+local tostring = tostring
+
+local Plugin = {}
+Plugin.Version = "1.3"
+
+Plugin.HasConfig = true
+Plugin.ConfigName = "WelcomeMessages_ns2cn.json"
+
+Plugin.DefaultConfig = {
+    MessageDelay = 5,
+    Users = {
+        [ "90000001" ] = {
+            Welcome = "Bob has joined the party!",
+            Leave = "Bob is off to fight more important battles."
+        }
+    },
+    ShowGeneric = false,
+    ShowForBots = false
+}
+
+Plugin.CheckConfig = true
+Plugin.CheckConfigTypes = true
+Plugin.SilentConfigSave = true
+
+Plugin.ConfigMigrationSteps = {
+    {
+        VersionTo = "1.3",
+        Apply = function( Config )
+            if not IsType( Config.Users, "table" ) then return end
+
+            -- Remove any remaining "Said" entries.
+            for ID, Data in pairs( Config.Users ) do
+                if IsType( Data, "table" ) then
+                    Data.Said = nil
+                end
+            end
+        end
+    }
+}
+
+do
+    local Validator = Shine.Validator()
+
+    local function ValidateColour( Key, Validator )
+        Validator:AddFieldRule( Key, Validator.IsType( "table", { 255, 255, 255 } ) )
+        Validator:AddFieldRule( Key, Validator.Each( Validator.IsType( "number", 255 ) ) )
+        Validator:AddFieldRule( Key, Validator.Each( Validator.Clamp( 0, 255 ) ) )
+    end
+
+    local function AddMessageRules( Key, PrintKey, Validator, Message )
+        if Message.Colour then
+            ValidateColour( { Key..".Colour", PrintKey..".Colour" }, Validator )
+        end
+        if Message.PrefixColour then
+            ValidateColour( { Key..".PrefixColour", PrintKey..".PrefixColour" }, Validator )
+        end
+
+        Validator:AddFieldRule( { Key..".Prefix", PrintKey..".Prefix" }, Validator.IsAnyType( { "string", "nil" } ) )
+        Validator:AddFieldRule( { Key..".Message", PrintKey..".Message" }, Validator.IsType( "string" ) )
+    end
+
+    local function ValidateUserEntry( ID, Entry )
+        local Key = StringFormat( "Users[ \"%s\" ]", ID )
+
+        local EntryValidator = Shine.Validator()
+        EntryValidator:AddFieldRule( { "Welcome", Key..".Welcome" },
+            EntryValidator.IsAnyType( { "string", "table", "nil" } ) )
+        EntryValidator:AddFieldRule( { "Leave", Key..".Leave" },
+            EntryValidator.IsAnyType( { "string", "table", "nil" } ) )
+
+        if IsType( Entry.Welcome, "table" ) then
+            AddMessageRules( "Welcome", StringFormat( "%s.Welcome", Key ), EntryValidator, Entry.Welcome )
+        end
+
+        if IsType( Entry.Leave, "table" ) then
+            AddMessageRules( "Leave", StringFormat( "%s.Leave", Key ), EntryValidator, Entry.Leave )
+        end
+
+        return EntryValidator:Validate( Entry )
+    end
+
+    Validator:AddRule( {
+        Matches = function( self, Config )
+            local Failed = false
+
+            for ID, MessageData in pairs( Config.Users ) do
+                if not IsType( MessageData, "table" ) then
+                    Print( "Welcome message for user %s was not a table and will be removed.", ID )
+                    Config.Users[ ID ] = nil
+
+                    Failed = true
+                elseif ValidateUserEntry( ID, MessageData ) then
+                    Failed = true
+                end
+            end
+
+            return Failed
+        end
+    } )
+
+    Plugin.ConfigValidator = Validator
+end
+function Plugin:Initialise()
+    self.Welcomed = {}
+    self.Enabled = true
+
+    return true
+end
+
+function Plugin:ShouldShowMessage( Client )
+    return Shine:IsValidClient( Client ) and ( self.Config.ShowForBots
+        or not Client:GetIsVirtual() )
+end
+
+local function ToColour( ColourDef )
+    if not ColourDef then
+        return { 255, 255, 255 }
+    end
+
+    local R = ColourDef[ 1 ] or 255
+    local G = ColourDef[ 2 ] or 255
+    local B = ColourDef[ 3 ] or 255
+
+    return R, G, B
+end
+
+function Plugin:DisplayMessage( Message )
+    if IsType( Message, "string" ) then
+        Shine:NotifyColour( nil, 255, 255, 255, Message )
+        return
+    end
+
+    local R, G, B = ToColour( Message.Colour )
+
+    if Message.Prefix then
+        local PR, PG, PB = ToColour( Message.PrefixColour )
+        Shine:NotifyDualColour( nil, PR, PG, PB, Message.Prefix,
+            R, G, B, Message.Message )
+    else
+        Shine:NotifyColour( nil, R, G, B, Message.Message )
+    end
+end
+function Plugin:ClientConnect( Client )
+    self:SimpleTimer( self.Config.MessageDelay, function()
+        if not self:ShouldShowMessage( Client ) then return end
+
+        local ID = tostring( Client:GetUserId() )
+        local MessageTable = self.Config.Users[ ID ]
+
+        if MessageTable and MessageTable.Welcome then
+            if not MessageTable.Said then
+                self:DisplayMessage( MessageTable.Welcome )
+
+                MessageTable.Said = true
+
+                --self:SaveConfig()
+            end
+
+            self.Welcomed[ Client ] = true
+
+            return
+        end
+
+        if not self.Config.ShowGeneric then return end
+
+        self.Welcomed[ Client ] = true
+
+        local Player = Client:GetControllingPlayer()
+        if not Player then return end
+
+        Shine:NotifyColour( nil, 200, 200, 200, ">> %s 加入了战局。", true, Player:GetName() )
+    end )
+end
+
+local Ceil = math.ceil
+
+local function ColourIntToTable( Int, Multiplier )
+    local Colour = ColorIntToColor( Int )
+    return { Ceil( Colour.r * 255 * Multiplier ), Ceil( Colour.g * 255 * Multiplier ),
+        Ceil( Colour.b * 255 * Multiplier ) }
+end
+
+
+local TeamColours = {
+    [ 0 ] = { 192, 192, 192 },
+    [ 1 ] = { 0, 110, 200 },
+    [ 2 ] = { 200, 150, 0 }
+}
+
+function Plugin:ClientDisconnect( Client )
+    if not self.Welcomed[ Client ] then return end
+
+    self.Welcomed[ Client ] = nil
+
+    local ID = tostring( Client:GetUserId() )
+    local MessageTable = self.Config.Users[ ID ]
+
+    if MessageTable and MessageTable.Leave then
+        Shine:NotifyColour( nil, 200, 200, 200, MessageTable.Leave )
+
+        MessageTable.Said = nil
+
+        -- self:SaveConfig()
+
+        return
+    end
+
+    if not self.Config.ShowGeneric then return end
+
+    local Player = Client:GetControllingPlayer()
+    if not Player then return end
+
+    local Team = Client.DisconnectTeam or 0
+    local Colour = TeamColours[ Team ] or TeamColours[ 0 ]
+
+    if not Client.DisconnectReason then
+        Shine:NotifyColour( nil, Colour[ 1 ], Colour[ 2 ], Colour[ 3 ],
+            StringFormat( "<< %s 离开了战局。", Player:GetName() ) )
+    else
+        Shine:NotifyColour( nil, Colour[ 1 ], Colour[ 2 ], Colour[ 3 ],
+            StringFormat( "<- %s 被服务器自动踢出，理由 (%s)。", Player:GetName(), Client.DisconnectReason ) )
+    end
+end
+
+function Plugin:OnScriptDisconnect( Client )
+    local Player = Client:GetControllingPlayer()
+
+    if not Player then return end
+
+    local Team = Player.GetTeamNumber and Player:GetTeamNumber()
+    if not Team then return end
+
+    Client.DisconnectTeam = Team
+end
+
+function Plugin:PostJoinTeam( Gamerules, Player, OldTeam, NewTeam, Force, ShineForce )
+    if NewTeam < 0 then return end
+    if not Player then return end
+
+    local Client = GetOwner( Player )
+
+    if Client then
+        Client.DisconnectTeam = NewTeam
+    end
+end
+
+function Plugin:Cleanup()
+    self.Welcomed = nil
+    self.BaseClass.Cleanup( self )
+
+    self.Enabled = false
+end
+
+Shine.Hook.SetupGlobalHook( "Server.DisconnectClient", "OnScriptDisconnect", "PassivePre" )
+
+Shine:RegisterExtension( "welcomemessages_ns2cn", Plugin )

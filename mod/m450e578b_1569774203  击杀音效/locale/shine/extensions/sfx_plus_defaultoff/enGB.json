@@ -1,0 +1,29 @@
+{
+    "CLIENT_VOTEMENU_BTN_NAME"                                  : "SFX Plus Setting",
+    "CLIENT_TAB_NAME_KA_INDICATOR"                              : "Kill & Assist",
+    "CLIENT_TAB_NAME_KILLSTREAK"                                : "Killstreak",
+    "CLIENT_TAB_NAME_THUGKILL"                                  : "Thug kill",
+
+    "CLIENT_TAB_KA_INDICATOR_LABEL_MAIN"                        : "Assist and kill vocal feedback settings",
+    "CLIENT_TAB_KA_INDICATOR_LABEL_ENABLE_KILL_FEEDBACK"        : "Enable kill sound feedback.",
+    "CLIENT_TAB_KA_INDICATOR_LABEL_KILL_FEEDBACK_VOLUME"        : "Kill feedback volume:",
+    "CLIENT_TAB_KA_INDICATOR_LABEL_ENABLE_ASSIST_FEEDBACK"      : "Enable assist sound feedback.",
+    "CLIENT_TAB_KA_INDICATOR_LABEL_ASSIST_FEEDBACK_VOLUME"      : "Assist feedback volume:",
+
+    "CLIENT_TAB_KILLSTREAK_LABEL_MAIN"                          : "Killstreak sound effect settings",
+    "CLIENT_TAB_KILLSTREAK_LABEL_ENABLE_PLAY_KILLSTREAK_SOUND"  : "Play Quake killstreak sound effect.",
+    "CLIENT_TAB_KILLSTREAK_LABEL_KILLSTREAK_SOUND_VOLUME"       : "Killstreak sfx volume:",
+    "CLIENT_TAB_KILLSTREAK_LABEL_ENABLE_PLAY_STREAKSTOP_SOUND"  : "Play streak stop sound.",
+    "CLIENT_TAB_KILLSTREAK_LABEL_STREAKSTOP_SOUND_VOLUME"       : "Streak stop volume:",
+
+    "CLIENT_TAB_THUGKILL_LABEL_MAIN"                            : "Thug kill sound effect settings",
+    "CLIENT_TAB_THUGKILL_LABEL_ENABLE_PLAY_THUGKILL_SOUND"      : "Play thug kill sound effect.",
+    "CLIENT_TAB_THUGKILL_LABEL_THUGKILL_SOUND_VOLUME"           : "Thug kill sfx volume:",
+
+    "SERVER_SET_ENABLE_SUCCESS_PLAY"                            : "Setting accepted: Play sound for '{Category}'",
+    "SERVER_SET_ENABLE_SUCCESS_MUTE"                            : "Setting accepted: Mute sound for '{Category}'",
+    "SERVER_SET_VOLUME_SUCCESS"                                 : "Setting accepted: The volume of '{Category}' is now {Value}",
+    "SERVER_SET_ERROR_NO_CATEGORY"                              : "Error: No category '{Category}', check your command.",
+    "SERVER_SET_ERROR_CATEGORY_DISABLED"                        : "Error: Category '{Category}' is disabled on this server.",
+    "SERVER_SET_ERROR_INVALID_PARAMETER"                        : "Error: Invalid parameter, check your command."
+}

@@ -1,0 +1,52 @@
+#!/bin/bash
+logfile="/home/ns2server/testserver/logs/log-Server.txt"
+
+output_config() {
+    	echo "graph_title GS Fairplay Player Stats"
+	echo "graph_category games"
+    	echo "team1players.label Marine players"
+    	echo "team2players.label Alien players"
+	echo "players.label Players"
+	#echo "readyroom.label Players in readyroom"
+	#echo "spectator.label Spectating players"
+}
+
+output_values() {
+	parsethis=$(grep 'FairplayPluginMuninData' $logfile | tail -n1)
+	team1players=$(echo $parsethis | awk -F';' '{print $2}')
+	team2players=$(echo $parsethis | awk -F';' '{print $3}')
+	let players=$team1players+$team2players
+	#readyroom=0
+	#spectator=0
+	printf "team1players.value %d\n" $team1players
+	printf "team2players.value %d\n" $team2players
+	#printf "readyroom.value %d\n" $readyroom
+	#printf "spectator.value %d\n" $spectator
+	printf "players.value %d\n" $players
+}
+
+output_usage() {
+    printf >&2 "%s - munin plugin to graph server stats\n" ${0##*/}
+    printf >&2 "Usage: %s [config]\n" ${0##*/}
+}
+
+case $# in
+    0)
+        output_values
+        ;;
+    1)
+        case $1 in
+            config)
+                output_config
+                ;;
+            *)
+                output_usage
+                exit 1
+                ;;
+        esac
+        ;;
+    *)
+        output_usage
+        exit 1
+        ;;
+esac

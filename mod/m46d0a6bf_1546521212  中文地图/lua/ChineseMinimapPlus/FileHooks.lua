@@ -1,0 +1,1 @@
+ModLoader.SetupFileHook( "lua/GUIMinimap.lua", "lua/ChineseMinimapPlus/GUIMinimap.lua" , "post" )

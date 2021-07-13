@@ -1,0 +1,16 @@
+{
+	"NOTIFY_PREFIX":"[FairPlay]",
+	"OK_LESS_PLAYER": "You can join the team with less players",
+	"OK_CHOICE":"Welcome to the team of your choice!",
+	"OK_MARINES":"Welcome to Marines!",
+	"OK_ALIENS":"Welcome to Aliens!",
+	"ERROR_0": "Sorry, you can't join any team due to the teams balance! Consider to start a 'Randomize readyroom' vote",
+	"ERROR_1": "Sorry, you can't join this team due to the teams balance",
+	"ERROR_2": "Wait for a change in team balance or join the other team",
+	"TEXT_CURRENT":"Current balance:",
+	"TEXT_JOIN_M":"New balance if you join the Marines:",
+	"TEXT_JOIN_A":"New balance if you join the Aliens:",
+	"INFO_SEED":"SEEDING GAME! Game will reset on player count: ",
+	"INFO_GAME":"ACCOUNTED GAME! Balance will be kept fair above playercount: ",
+	"INFO_RESET":"Seeding phase is over, Game will reset."
+}

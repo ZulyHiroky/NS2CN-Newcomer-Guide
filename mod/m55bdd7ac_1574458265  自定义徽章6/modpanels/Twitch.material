@@ -1,0 +1,5 @@
+shader = "shaders/ModPanel.surface_shader"
+panel   = "modpanels/Twitch.dds"
+size     = {0.80, 0.80}
+url       = "https://www.twitch.tv/communities/8bitgamers"
+

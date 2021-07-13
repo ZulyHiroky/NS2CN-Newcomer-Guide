@@ -1,0 +1,5 @@
+shader = "shaders/ModPanel.surface_shader"
+panel   = "modpanels/Obliteration.dds"
+size     = {0.25, 0.25}
+
+

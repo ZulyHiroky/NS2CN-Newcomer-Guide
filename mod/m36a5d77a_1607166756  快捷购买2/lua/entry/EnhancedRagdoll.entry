@@ -1,0 +1,4 @@
+modEntry = {
+    FileHooks = "lua/EnhancedRagdoll/FileHooks.lua",
+    Priority = 10
+}

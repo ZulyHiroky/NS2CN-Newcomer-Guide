@@ -1,0 +1,4 @@
+modEntry = {
+FileHooks = "lua/NS2Fixes/FileHooks.lua",
+Priority = 200
+}

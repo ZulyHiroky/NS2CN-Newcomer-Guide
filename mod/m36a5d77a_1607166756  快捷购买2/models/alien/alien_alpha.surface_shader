@@ -1,0 +1,83 @@
+<shader>
+	
+	<inputs>
+		<input name="albedoMap" type="texture" address="wrap" />
+		<input name="normalMap" type="texture" address="wrap" />
+		<input name="specularMap" type="texture" address="wrap" />
+		<input name="emissiveMap" type="texture" address="wrap" srgb="true"/>
+		<input name="opacityMap" type="texture" address="wrap"/>
+		<input name="blendMap" type="texture" address="wrap">materials/effects/mesh_effects/skulk_view_blood.dds</input>
+		<input name="overlayMap" type="texture" address="wrap">models/misc/infestation/infestation.dds</input>
+        <input name="hiddenAmount" type="float">0.0</input>
+		<input name="glowIntensity" type="float">1.0</input>
+		<input name="highlight" type="float">0.0</input>
+		<input name="outline" type="float">0.0</input>
+		<input name="colorIntensity" type="float">1.0</input>
+	</inputs>
+	
+	<params>
+		<param name="alphaTest">true</param>
+	</params>
+	
+	<code>
+	<![CDATA[
+		float paramQuick(float x, float p) {
+			return pow(x,p);
+		}
+		
+		float paramSlow(float x, float p) {
+			return 1 - pow(abs(x),p);
+		}
+		
+		float3 DecodeNormal(const float4 texNormal)
+		{
+			float4 n = texNormal * 2 - 1;
+			//return float3(n.a, n.g, sqrt(1 - dot(n.ag, n.ag)) );
+            return n.xyz;
+		}
+		
+		void MaterialShader(in Material_Input input, inout Material material)
+		{
+		
+			float f             = 1 - hiddenAmount;
+			float highlightId   = highlight;
+			float param         = tex2D(blendMap, input.texCoord).a; // speading parameter
+			float textureSpeed  = 2;
+			float destroySpeed  = 2.5;
+		
+			float4 specularGloss = tex2D(specularMap, input.texCoord);
+			material.tsNormal 	= DecodeNormal( tex2D(normalMap, input.texCoord) );			
+			material.specular	= specularGloss.rgb;
+			material.gloss		= specularGloss.a;
+			
+			float opacity       = paramSlow(param,destroySpeed);
+			float blend         = paramQuick(param,textureSpeed);
+			
+			// Blending
+			if (blend + f > 1)
+			{
+				if (colorIntensity < 1){
+					float3 albedo = tex2D(albedoMap, input.texCoord).rgb;
+					float luma = 0.2627f * albedo.r + 0.6780f * albedo.g + 0.0593f * albedo.b;
+					material.albedo = lerp(max(colorIntensity, 0.5) * float3(luma, luma, luma), albedo, colorIntensity);
+				}
+				else {
+					material.albedo = tex2D(albedoMap, input.texCoord).rgb;
+				}
+
+			} else {
+			    material.albedo = tex2D(overlayMap, input.texCoord * 4).rgb;
+			}
+
+			// Opacity
+			material.opacity = (opacity + f - 0.5) * tex2D(opacityMap, input.texCoord).rgb;
+			material.emissive   = tex2D(emissiveMap, input.texCoord).rgb * f * glowIntensity;
+			
+			material.id = 1*highlightId; // To make it show up on alien vision
+			material.outline = outline;
+			
+		}
+	]]>
+	</code>
+
+</shader>

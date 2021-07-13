@@ -1,0 +1,34 @@
+<shader>
+    
+    <shader_factory>GUI</shader_factory>
+    
+    <inputs>
+        <input name="baseTexture"       type="texture" address="wrap"/>
+        <input name="frameCount"        type="float">30</input>
+    </inputs>
+    
+    <code>
+    <![CDATA[
+        void MaterialShader(bool textured, float2 texCoord, float4 color, inout Material material)
+        {
+            // https://www.desmos.com/calculator/qln9z4fyoi
+            
+            const float pause = 5.0f;
+            const float fps = 10.0f;
+            
+            const float totalTime = (frameCount / fps) + pause;
+            const float frac = time / totalTime;
+            const float cycle = totalTime * (frac - floor(frac));
+            const float progress = (fps * max(0.0f, cycle - pause)) / frameCount;
+            const float currentFrame = min(floor(progress * frameCount), frameCount - 1);
+            
+            const float2 texCoordFactor = float2(1.0f, 1.0f / frameCount);
+            const float2 texCoordPer = float2(0.0f, texCoordFactor.y);
+            const float2 texCoordAnimated = texCoord * texCoordFactor + texCoordPer * currentFrame;
+            
+            material.resultColor = tex2D(baseTexture, texCoordAnimated);
+        }
+    ]]>
+    </code>
+    
+</shader>

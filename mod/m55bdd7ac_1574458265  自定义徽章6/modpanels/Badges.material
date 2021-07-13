@@ -1,0 +1,5 @@
+shader = "shaders/ModPanel.surface_shader"
+panel   = "modpanels/Badges.dds"
+size     = {0.75, 0.75}
+url       = "https://twiddicombe.wixsite.com/website-8"
+

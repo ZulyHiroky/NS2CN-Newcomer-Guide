@@ -1,0 +1,4 @@
+modEntry = [[
+     Server: lua/WatchdogHelperServer.lua,
+     Priority: 50
+]]

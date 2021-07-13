@@ -1,0 +1,63 @@
+<shader>
+	
+	<inputs>
+		<input name="albedoMap" type="texture" address="wrap" />
+		<input name="normalMap" type="texture" address="wrap" />
+		<input name="specularMap" type="texture" address="wrap" />
+		<input name="emissiveMap" type="texture" address="wrap" srgb="true"/>
+		<input name="highlight" type="float">0.0</input>
+		<input name="eightgreen" type="float">0.0</input>
+        
+        <!-- should be specified via game -->
+        <!-- Row major index. 0 is the top-left rect -->
+        <input name="textureIndex" type="float">0</input>	
+		<!-- should be specified via material file -->
+        <input name="numRows" type="float">2</input>			
+        <input name="numColumns" type="float">1</input>			
+	</inputs>
+	
+	<code>
+	<![CDATA[
+		float3 DecodeNormal(const float4 texNormal)
+		{
+			float4 n = texNormal * 2 - 1;
+			//return float3(n.a, n.g, sqrt(1 - dot(n.ag, n.ag)) );
+			return n.xyz;
+		}
+		void MaterialShader(in Material_Input input, inout Material material)
+		{
+            float mapId = saturate(textureIndex - 1.0f); //hacky way of mapping 0,1 to 0, and 2 to 1
+            float2 uv = input.texCoord;
+			float row = floor(mapId / numColumns);
+			float col = mapId - row*numColumns;
+			uv.x = (col+uv.x) / numColumns;
+			uv.y = (row+uv.y) / numRows;
+			float highlightId   = highlight;
+			
+			float4 specularGloss = tex2D(specularMap, uv);
+			
+			material.albedo 	= tex2D(albedoMap, uv).rgb;
+            
+            // Don't atlas normal map.
+			material.tsNormal 	= DecodeNormal( tex2D(normalMap, input.texCoord) );
+			material.specular	= specularGloss.rgb;
+			material.gloss		= specularGloss.a;
+			material.emissive   = tex2D(emissiveMap, uv).rgb;
+            
+            if (eightgreen >= 0.5){ 
+                float _ = material.albedo.r;
+                material.albedo.r = material.albedo.g;
+                material.albedo.g = _;
+                _ = material.emissive.r;
+                material.emissive.r = material.emissive.g;
+                material.emissive.g = _;
+                material.gloss		= pow(material.gloss, 0.1);
+            }
+			
+			material.id = 1*highlightId;    // for alien vision
+			
+		}
+	]]>		
+	</code>
+
+</shader>

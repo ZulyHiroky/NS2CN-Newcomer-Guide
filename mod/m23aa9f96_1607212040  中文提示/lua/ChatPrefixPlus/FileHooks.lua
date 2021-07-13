@@ -1,0 +1,1 @@
+ModLoader.SetupFileHook( "lua/Chat.lua", "lua/ChatPrefixPlus/Chat.lua", "replace" )

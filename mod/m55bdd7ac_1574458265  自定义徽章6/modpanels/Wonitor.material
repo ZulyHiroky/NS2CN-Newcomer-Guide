@@ -1,0 +1,5 @@
+shader = "shaders/ModPanel.surface_shader"
+panel   = "modpanels/Wonitor.dds"
+size     = {0.25, 0.25}
+url       = "http://wonitor.8bitgamers.co.uk/wonitor/"
+

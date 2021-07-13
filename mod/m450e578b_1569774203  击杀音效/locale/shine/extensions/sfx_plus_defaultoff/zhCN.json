@@ -1,0 +1,29 @@
+{
+    "CLIENT_VOTEMENU_BTN_NAME"                                  : "特殊音效设置",
+    "CLIENT_TAB_NAME_KA_INDICATOR"                              : "击杀与助攻",
+    "CLIENT_TAB_NAME_KILLSTREAK"                                : "连续击杀",
+    "CLIENT_TAB_NAME_THUGKILL"                                  : "暴徒击杀",
+
+    "CLIENT_TAB_KA_INDICATOR_LABEL_MAIN"                        : "击杀与助攻的反馈音效设置",
+    "CLIENT_TAB_KA_INDICATOR_LABEL_ENABLE_KILL_FEEDBACK"        : "开启击杀反馈音效。",
+    "CLIENT_TAB_KA_INDICATOR_LABEL_KILL_FEEDBACK_VOLUME"        : "击杀反馈音效音量：",
+    "CLIENT_TAB_KA_INDICATOR_LABEL_ENABLE_ASSIST_FEEDBACK"      : "开启助攻反馈音效。",
+    "CLIENT_TAB_KA_INDICATOR_LABEL_ASSIST_FEEDBACK_VOLUME"      : "助攻反馈音效音量：",
+
+    "CLIENT_TAB_KILLSTREAK_LABEL_MAIN"                          : "连续击杀的音效设置",
+    "CLIENT_TAB_KILLSTREAK_LABEL_ENABLE_PLAY_KILLSTREAK_SOUND"  : "播放雷神之锤/虚幻竞技场的连杀音效。",
+    "CLIENT_TAB_KILLSTREAK_LABEL_KILLSTREAK_SOUND_VOLUME"       : "连杀音效音量：",
+    "CLIENT_TAB_KILLSTREAK_LABEL_ENABLE_PLAY_STREAKSTOP_SOUND"  : "播放连杀终结音效。",
+    "CLIENT_TAB_KILLSTREAK_LABEL_STREAKSTOP_SOUND_VOLUME"       : "连杀终结音效音量：",
+
+    "CLIENT_TAB_THUGKILL_LABEL_MAIN"                            : "暴徒击杀的音效设置",
+    "CLIENT_TAB_THUGKILL_LABEL_ENABLE_PLAY_THUGKILL_SOUND"      : "播放暴徒击杀（用斧子、枪托、寄生等武器击杀）\n的音效。",
+    "CLIENT_TAB_THUGKILL_LABEL_THUGKILL_SOUND_VOLUME"           : "暴徒击杀音效音量：",
+
+    "SERVER_SET_ENABLE_SUCCESS_PLAY"                            : "Setting accepted: Play sound for '{Category}'",
+    "SERVER_SET_ENABLE_SUCCESS_MUTE"                            : "Setting accepted: Mute sound for '{Category}'",
+    "SERVER_SET_VOLUME_SUCCESS"                                 : "Setting accepted: The volume of '{Category}' is now {Value}",
+    "SERVER_SET_ERROR_NO_CATEGORY"                              : "Error: No category '{Category}', check your command.",
+    "SERVER_SET_ERROR_CATEGORY_DISABLED"                        : "Error: Category '{Category}' is disabled on this server.",
+    "SERVER_SET_ERROR_INVALID_PARAMETER"                        : "Error: Invalid parameter, check your command."
+}

@@ -1,0 +1,92 @@
+<shader>
+
+    <inputs>
+        <input name="albedoMap" type="texture" address="wrap" />
+        <input name="normalMap" type="texture" address="wrap" />
+        <input name="specularMap" type="texture" address="wrap" />
+        <input name="emissiveMap" type="texture" address="wrap" />
+        <input name="noiseMap" type="texture" address="wrap" srgb="true">materials/effects/mesh_effects/fire_tile_01.dds</input>
+		<input name="maskMap" type="texture" address="wrap" srgb="true">models/marine/exosuit/minigun_view_heatmask.dds</input>
+		<input name="heatMap" type="texture" address="clamp" srgb="true">materials/effects/mesh_effects/heatmap.dds</input>
+	    <input name="heatAmountleft" type="float">0.0</input>
+        <input name="heatAmountright" type="float">0.0</input>	
+		<input name="eightgreen" type="float">0.0</input>
+		
+		<!-- should be specified via game -->
+        <!-- Row major index. 0 is the top-left rect -->
+        <input name="textureIndex" type="float">0</input>	
+		<!-- should be specified via material file -->
+        <input name="numRows" type="float">2</input>			
+        <input name="numColumns" type="float">2</input>			
+    </inputs>
+    
+    <params>
+        <param name="osPosition">true</param>
+		<param name="wsPosition">true</param>
+		<param name="wsNormal">true</param>
+		<param name="vsNormal">true</param>
+		<param name="twoSided">false</param>
+    </params>
+    
+    <code>
+    <![CDATA[
+		float3 DecodeNormal(const float4 texNormal)
+		{
+			float4 n = texNormal * 2 - 1;
+			//return float3(n.a, n.g, sqrt(1 - dot(n.ag, n.ag)) );
+			return n.xyz;
+		}
+        void MaterialShader(in Material_Input input, inout Material material)
+        {
+		
+			float2 uv = input.texCoord;
+			float row = floor(textureIndex / numColumns);
+			float col = textureIndex - row*numColumns;
+			uv.x = (col+uv.x) / numColumns;
+			uv.y = (row+uv.y) / numRows;
+			
+			const float detailNoiseAmount = 0.5;
+        
+            float4 specularGloss = tex2D(specularMap, uv);
+            material.albedo = tex2D(albedoMap, uv).rgb;
+            
+            // Don't atlas the normal map
+            material.tsNormal = DecodeNormal( tex2D(normalMap, input.texCoord) );
+            
+            material.specular = specularGloss.rgb;
+            material.gloss = specularGloss.a;
+			
+			// Vary slightly along the barrel length.
+			float depth = (input.osPosition.zzz * 2 - 2.5) * 0.5 - 0.5;
+			
+			float heatAmount = input.osPosition.x < 0 ? heatAmountright : heatAmountleft;
+			
+			float detailNoise = tex2D(noiseMap, uv * 10).r * detailNoiseAmount + (1 - detailNoiseAmount);
+			float3 tint = tex2D(heatMap, float2(heatAmount + depth, 0)).rgb * heatAmount * detailNoise;
+			
+			float3 mask = tex2D(maskMap, input.texCoord).rgb;
+			float3 noise = tex2D(noiseMap, uv  * 7 + float2( time * .03 , time * -.01)).rgb;
+
+			float3 noise2 = tex2D(noiseMap, uv  * 5 + float2(0, time * .034)).rgb;
+			float fresnel = pow(1 - max(-input.vsNormal.z, 0.1), 3);
+			material.emissive = tex2D(emissiveMap, uv).rgb;
+            
+            if (eightgreen >= 0.5){ 
+                float oldRed = material.albedo.r;
+                material.albedo.r = material.albedo.g;
+                material.albedo.g = oldRed;
+                float oldRedEmissive = material.emissive.r;
+                material.emissive.r = material.emissive.g;
+                material.emissive.g = oldRedEmissive;
+                material.gloss		= pow(material.gloss, 0.1);
+            }
+            
+			material.emissive = material.emissive + (fresnel*5 + (noise * noise2 *.2) + .1) * tint * mask;
+			material.id = 1;
+			
+            
+        }
+    ]]>
+    </code>
+
+</shader>

@@ -1,0 +1,4 @@
+shader = "shaders/ModPanel.surface_shader"
+panel  = "modpanels/ns2rus/tournament_ad.dds"
+url    = "https://steamcommunity.com/groups/ns2ru/announcements/detail/5582755747646198966"
+size   = {1, 1}
